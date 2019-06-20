@@ -1,2 +1,2 @@
 # moving-challenge
-Fortec Moving Challenge Repo
+Fortech Moving Challenge Repo
