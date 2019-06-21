@@ -1,0 +1,178 @@
+.detailsPageDiv {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardsDiv {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 2rem;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.pagesDiv {
+  text-align: center;
+  padding: 30px 0;
+  color: #afafaf;
+}
+
+.leftInfoDiv {
+  display: inline-block;
+  width: 100%;
+
+  //   border: 1px solid blue;
+}
+
+.theCard {
+  border: 1px solid red;
+  box-sizing: border-box;
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.firstDivInsideCard {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 15px;
+  width: 100%;
+  font-family: "Open Sans L";
+  font-weight: 100;
+  color: black;
+  padding: 0.25rem 0.25rem 0 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.cardImage {
+  box-sizing: border-box;
+  width: 100px;
+  border-radius: 50% !important;
+  display: block;
+  margin: auto;
+}
+
+.combinedDiv {
+  //   border: 1px solid green;
+  float: right;
+  width: 200px;
+  margin-right: 25px;
+  //   display: inline-flex;
+}
+
+.combinedPointsDiv {
+  float: left;
+  margin-left: 25px;
+}
+
+.combinedUnitsDiv {
+  float: right;
+}
+
+.nameP {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  font-family: "somatic";
+  font-weight: 900;
+}
+
+.rankDiv {
+  //   margin-bottom: 0.3rem;
+  box-sizing: border-box;
+  //   display: block;
+  //   border: 1px solid blue;
+  font-size: 16px;
+  font-weight: 100;
+  margin-left: 25px;
+  float: left;
+}
+
+.positionP {
+  font-size: 25px;
+  font-family: "somatic";
+  font-weight: 900;
+  //   margin: 0;
+  color: #fa056d;
+  box-sizing: border-box;
+  margin-top: 0px;
+  text-align: center;
+  //   display: block;
+  //   margin-block-start: 1em;
+  //   margin-block-end: 1em;
+  // margin-inline-start: 0px;
+  // margin-inline-end: 0px;
+}
+
+.rankP {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin: 0;
+  box-sizing: border-box;
+  margin-top: -35px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.combinedPointsP {
+  box-sizing: border-box;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 25px;
+  font-family: "somatic";
+  font-weight: 900;
+  margin: 0;
+}
+
+.combinedUnitsP {
+  box-sizing: border-box;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 25px;
+  font-family: "somatic";
+  font-weight: 900;
+  margin: 0;
+}
+
+.pagesSpanTop {
+  padding: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.pagesSpanFirst {
+  padding: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fa056d;
+}
+
+.pagesSpanContent {
+  padding: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pagesSpanBottom {
+  padding: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+}

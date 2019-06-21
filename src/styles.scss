@@ -1,1 +1,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+  font-family: somatic;
+  src: url(assets/font/Somatic-Rounded.otf) format("opentype");
+}
+.bodyul {
+  box-sizing: border-box;
+  font-family: "Open Sans L";
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  display: block;
+  overflow: hidden;
+}
