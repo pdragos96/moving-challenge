@@ -6,10 +6,13 @@
 .cardsDiv {
   box-sizing: border-box;
   display: grid;
+  text-align: center;
+  margin-top: 25px;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   grid-column-gap: 30px;
   grid-row-gap: 2rem;
-  width: 100%;
+  width: 89%;
+  margin-left: 12%;
   padding: 0 50px;
 }
 
@@ -27,11 +30,18 @@
 }
 
 .theCard {
-  border: 1px solid red;
+  // border: 1px solid red;
   box-sizing: border-box;
   color: #007bff;
   text-decoration: none;
   background-color: transparent;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding-bottom: 25px;
+}
+
+.theCard:hover {
+  box-shadow: 6px 6px 11px -4px rgba(176, 176, 176, 1);
 }
 
 .firstDivInsideCard {
@@ -175,4 +185,28 @@
   font-weight: 700;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.categoryPointsDiv {
+  // border: 1px solid red;
+  text-align: center;
+}
+
+.categoryIcon {
+  margin-left: 5px;
+  height: 24px;
+  width: 40px;
+  text-align: center;
+  // border: 5px solid blue;
+}
+
+.categoryDetailedPointsDiv {
+  display: inline-flex;
+  text-align: center;
+}
+
+.categoryDetailedStatsDiv {
+  margin-left: 5px;
+  text-align: center;
+  font-family: "somatic";
 }
