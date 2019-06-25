@@ -1,0 +1,50 @@
+<div class="pagesDiv">
+  <span class="pagesSpanTop" (click)="beginClicked()">‹‹</span>
+  <span class="pagesSpanTop" (click)="previousClicked()">‹</span>
+  <span
+    id="1"
+    [ngClass]="
+      isFirstSelected() ? 'pagesSpanFirstSelected' : 'pagesSpanFirstUnselected'
+    "
+    (click)="firstClicked()"
+    >{{ getFirstButtonNumber() }}</span
+  >
+  <span
+    id="2"
+    [ngClass]="
+      isSecondSelected()
+        ? 'pagesSpanSecondSelected'
+        : 'pagesSpanSecondUnselected'
+    "
+    (click)="secondClicked()"
+    >{{ getSecondButtonNumber() }}</span
+  >
+  <span
+    id="3"
+    [ngClass]="
+      isThirdSelected() ? 'pagesSpanThirdSelected' : 'pagesSpanThirdUnselected'
+    "
+    (click)="thirdClicked()"
+    >{{ getThirdButtonNumber() }}</span
+  >
+  <span
+    id="4"
+    [ngClass]="
+      isFourthSelected()
+        ? 'pagesSpanFourthSelected'
+        : 'pagesSpanFourthUnselected'
+    "
+    (click)="fourthClicked()"
+    >{{ getFourthButtonNumber() }}</span
+  >
+  <span
+    id="5"
+    [ngClass]="
+      isFifthSelected() ? 'pagesSpanFifthSelected' : 'pagesSpanFifthUnselected'
+    "
+    (click)="fifthClicked()"
+    >{{ getFifthButtonNumber() }}</span
+  >
+  <span class="pagesSpanBottom" (click)="nextClicked()">›</span>
+  <span class="pagesSpanBottom" (click)="lastClicked()">››</span>
+</div>

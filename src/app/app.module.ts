@@ -10,13 +10,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import { BottomNavigationComponent } from './bottom-navigation/bottom-navigation.component';
+import { CardComponentComponent } from './card-component/card-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     SidebarComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+    BottomNavigationComponent,
+    CardComponentComponent
   ],
   imports: [
     BrowserModule,
