@@ -15,7 +15,16 @@
   margin-left: 11%;
   padding: 0 50px;
 }
-
+.theCardComponent {
+  // border: 1px solid red;
+  box-sizing: border-box;
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding-bottom: 25px;
+}
 .theCardComponent:hover {
   box-shadow: 6px 6px 11px -4px rgba(176, 176, 176, 1);
 }
