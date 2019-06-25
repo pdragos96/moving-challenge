@@ -1,28 +1,62 @@
-import { Component, OnInit } from '@angular/core';
-import {NavService} from "../nav-service.service"
+import { Component, OnInit } from "@angular/core";
+import { NavService } from "../nav-service.service";
 
 @Component({
-  selector: 'app-bottom-navigation',
-  templateUrl: './bottom-navigation.component.html',
-  styleUrls: ['./bottom-navigation.component.scss']
+  selector: "app-bottom-navigation",
+  templateUrl: "./bottom-navigation.component.html",
+  styleUrls: ["./bottom-navigation.component.scss"]
 })
 export class BottomNavigationComponent implements OnInit {
-
   constructor(private navService: NavService) {
-    this.navService.initializeNums(); 
+    this.navService.get_data();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   firstClicked() {
     console.log("SAL 1");
-    this.navService.allFalse();
-    this.navService.changeFirst();
+    if (this.navService.isFirstSelected.getValue() === false) {
+      if (this.navService.num[0] != 1) {
+        if (this.navService.num[0] === 2) {
+          this.navService.decreaseArray();
+          this.navService.allFalse();
+          this.navService.changeSecond();
+          return;
+        }
+        this.navService.decreaseArray();
+        this.navService.decreaseArray();
+        this.navService.allFalse();
+        this.navService.changeThird();
+        return;
+      }
+      this.navService.allFalse();
+      this.navService.changeFirst();
+    }
+  }
+
+  fifthClicked() {
+    console.log("SAL 5");
+    if (this.navService.isFifthSelected.getValue() === false) {
+      if (this.navService.num[4] != this.navService.num[5]) {
+        if (this.navService.num[4] === this.navService.num[5] - 1) {
+          this.navService.increaseArray();
+          this.navService.allFalse();
+          this.navService.changeFourth();
+          return;
+        }
+        this.navService.increaseArray();
+        this.navService.increaseArray();
+        this.navService.allFalse();
+        this.navService.changeThird();
+        return;
+      }
+      this.navService.allFalse();
+      this.navService.changeFifth();
+    }
   }
 
   secondClicked() {
     console.log("SAL 2");
-      if (this.navService.isSecondSelected.getValue() === false) {
+    if (this.navService.isSecondSelected.getValue() === false) {
       this.navService.allFalse();
       this.navService.changeSecond();
       if (this.navService.num[0] > 1) {
@@ -50,126 +84,128 @@ export class BottomNavigationComponent implements OnInit {
     }
   }
 
-  fifthClicked() {
-    console.log("SAL 5");
-    this.navService.allFalse();
-    this.navService.changeFifth();
-  }
-
-  isFirstSelected():boolean {
-    if (this.navService.isFirstSelected.getValue() == true) return true;
+  isFirstSelected(): boolean {
+    if (this.navService.isFirstSelected.getValue() === true) {
+      return true;
+    }
     return false;
   }
 
-  isSecondSelected():boolean {
-    if (this.navService.isSecondSelected.getValue() == true) return true;
+  isSecondSelected(): boolean {
+    if (this.navService.isSecondSelected.getValue() === true) {
+      return true;
+    }
     return false;
   }
 
-  isThirdSelected():boolean {
-    if (this.navService.isThirdSelected.getValue() == true) return true;
+  isThirdSelected(): boolean {
+    if (this.navService.isThirdSelected.getValue() === true) {
+      return true;
+    }
     return false;
   }
 
-  isFourthSelected():boolean {
-    if (this.navService.isFourthSelected.getValue() == true) return true;
+  isFourthSelected(): boolean {
+    if (this.navService.isFourthSelected.getValue() === true) {
+      return true;
+    }
     return false;
   }
 
-  isFifthSelected():boolean {
-    if (this.navService.isFifthSelected.getValue() == true) return true;
+  isFifthSelected(): boolean {
+    if (this.navService.isFifthSelected.getValue() === true) {
+      return true;
+    }
     return false;
   }
 
-  getFirstButtonNumber():number {
+  getFirstButtonNumber(): number {
     return this.navService.num[0];
   }
 
-  getSecondButtonNumber():number {
+  getSecondButtonNumber(): number {
     return this.navService.num[1];
   }
 
-  getThirdButtonNumber():number {
+  getThirdButtonNumber(): number {
     return this.navService.num[2];
   }
 
-  getFourthButtonNumber():number {
+  getFourthButtonNumber(): number {
     return this.navService.num[3];
   }
 
-  getFifthButtonNumber():number {
+  getFifthButtonNumber(): number {
     return this.navService.num[4];
   }
 
-  decreaseToFirst():void{
+  decreaseToFirst(): void {
     this.navService.decreaseArrayToFirst();
   }
 
-  decreaseByOne():void{
+  decreaseByOne(): void {
     this.navService.decreaseArray();
   }
 
-  increaseByOne():void{
-      this.navService.increaseArray();
+  increaseByOne(): void {
+    this.navService.increaseArray();
   }
 
-  increaseToLast():void{
+  increaseToLast(): void {
     this.navService.increaseArrayToLast();
   }
 
-  beginClicked():void {
+  beginClicked(): void {
     this.decreaseToFirst();
     this.firstClicked();
   }
 
-  previousClicked():void {
-    if (this.navService.isFirstSelected.getValue() === true ) {
+  previousClicked(): void {
+    if (this.navService.isFirstSelected.getValue() === true) {
       return;
     }
 
-    if (this.navService.isSecondSelected.getValue() === true ) {
+    if (this.navService.isSecondSelected.getValue() === true) {
       this.firstClicked();
       return;
     }
 
-    if ( this.navService.isFourthSelected.getValue() === true ) {
+    if (this.navService.isFourthSelected.getValue() === true) {
       this.thirdClicked();
       return;
     }
 
-    if (this.navService.isFifthSelected.getValue() === true ) {
+    if (this.navService.isFifthSelected.getValue() === true) {
       this.fourthClicked();
       return;
     }
 
     this.secondClicked();
-
   }
 
-  nextClicked():void {
-    if (this.navService.isFirstSelected.getValue() === true ) {
+  nextClicked(): void {
+    if (this.navService.isFirstSelected.getValue() === true) {
       this.secondClicked();
       return;
-    } 
+    }
 
-    if (this.navService.isSecondSelected.getValue() === true ) {
+    if (this.navService.isSecondSelected.getValue() === true) {
       this.thirdClicked();
       return;
-    }  
-    
+    }
+
     if (this.navService.isFourthSelected.getValue() === true) {
       this.fifthClicked();
       return;
-    }  
+    }
     if (this.navService.isFifthSelected.getValue() === true) {
       return;
     }
     this.fourthClicked();
   }
 
-  lastClicked():void {
+  lastClicked(): void {
     this.increaseToLast();
     this.fifthClicked();
   }
-
 }
