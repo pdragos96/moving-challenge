@@ -17,6 +17,7 @@
   background-clip: border-box;
   border-right: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  // padding: 0 50px;
 }
 
 .cardImage {
@@ -67,16 +68,10 @@
   font-size: 25px;
   font-family: "somatic";
   font-weight: 900;
-  //   margin: 0;
   color: #fa056d;
   box-sizing: border-box;
   margin-top: 0px;
   text-align: center;
-  //   display: block;
-  //   margin-block-start: 1em;
-  //   margin-block-end: 1em;
-  // margin-inline-start: 0px;
-  // margin-inline-end: 0px;
 }
 
 .rankP {
@@ -132,6 +127,7 @@
 }
 
 .categoryDetailedPointsDiv {
+  width: 50%;
   display: inline-flex;
   text-align: center;
 }

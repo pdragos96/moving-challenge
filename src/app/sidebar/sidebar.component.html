@@ -2,7 +2,12 @@
   <div class="combinedChallengesDiv">Combined Challenges</div>
   <div class="datesDiv">11/05/2019 - 15/11/2019</div>
   <div class="searchDiv">
-    <input type="text" placeholder="Search" />
+    <input
+      #cautaNume
+      type="text"
+      placeholder="Search"
+      (keyup)="changeHappened(cautaNume.value)"
+    />
     <span>
       <svg
         stroke="currentColor"

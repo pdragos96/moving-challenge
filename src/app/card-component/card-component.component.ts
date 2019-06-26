@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+
+import { NavService } from "../nav-service.service";
+import { ContestantCombined } from "../contestantCombined";
+import { CONTESTANTS } from "../mockContestants";
 
 @Component({
-  selector: 'app-card-component',
-  templateUrl: './card-component.component.html',
-  styleUrls: ['./card-component.component.scss']
+  selector: "app-card-component",
+  templateUrl: "./card-component.component.html",
+  styleUrls: ["./card-component.component.scss"]
 })
 export class CardComponentComponent implements OnInit {
+  contestantsList: ContestantCombined[];
+  selectedPage: number;
 
-  constructor() { }
+  @Input()
+  public contestant: ContestantCombined;
 
-  ngOnInit() {
-  }
+  constructor(private navService: NavService) {}
 
+  ngOnInit() {}
 }

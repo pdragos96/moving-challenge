@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { UserResponse } from "./userResponse";
 
 import { ContestantCombined } from "./contestantCombined";
+import { filter } from "minimatch";
 
 @Injectable({
   providedIn: "root"
@@ -27,7 +28,9 @@ export class NavService {
   num: number[] = new Array(6);
   numberOfElements: number;
 
-  competersArray: ContestantCombined[];
+  competersArray: ContestantCombined[] = new Array();
+  displayedList: ContestantCombined[] = new Array();
+  filteredArray: ContestantCombined[] = new Array();
 
   constructor(private httpClient: HttpClient) {
     this.isFirstSelected = new BehaviorSubject<boolean>(true);
@@ -78,16 +81,43 @@ export class NavService {
     );
     contestants.subscribe(data => {
       this.competersArray = data.content;
-      console.log(data.content[1]);
-
-      for (let i = 0; i < this.numberOfElements; i++) {
-        console.log(this.competersArray[i].leaderboardPieChartData[1]);
-      }
+      this.displayedList = this.competersArray;
     });
   }
 
   public getContestantsAsArray(): ContestantCombined[] {
     return this.competersArray;
+  }
+
+  public getTheSixContestants(): ContestantCombined[] {
+    return this.displayedList.slice(
+      6 * (this.getSelectedPage() - 1),
+      6 * (this.getSelectedPage() - 1) + 6
+    );
+  }
+
+  public showElementsThatContainString(nume: string): void {
+    this.filteredArray = new Array();
+
+    for (let i = 0; i < this.competersArray.length; i++) {
+      if (
+        (
+          this.competersArray[i].firstName.toUpperCase() +
+          " " +
+          this.competersArray[i].lastName.toUpperCase()
+        ).includes(nume.toUpperCase())
+      ) {
+        this.filteredArray.push(this.competersArray[i]);
+      }
+    }
+    this.displayedList = this.filteredArray;
+    console.log("LISTA FILTRATA ESTE");
+    console.log(this.filteredArray);
+    // return filteredArray;
+  }
+
+  public resetLists(): void {
+    this.displayedList = this.competersArray;
   }
 
   public allFalse(): void {
@@ -164,5 +194,24 @@ export class NavService {
 
   public getIsFifthSelected() {
     return this.isFifthSelected.asObservable();
+  }
+
+  public getSelectedPage(): number {
+    if (this.isFirstSelected.getValue() === true) {
+      return this.num[0];
+    }
+    if (this.isSecondSelected.getValue() === true) {
+      return this.num[1];
+    }
+    if (this.isThirdSelected.getValue() === true) {
+      return this.num[2];
+    }
+    if (this.isFourthSelected.getValue() === true) {
+      return this.num[3];
+    }
+    if (this.isFifthSelected.getValue() === true) {
+      return this.num[4];
+    }
+    return 0;
   }
 }
