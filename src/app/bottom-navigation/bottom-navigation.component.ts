@@ -208,4 +208,32 @@ export class BottomNavigationComponent implements OnInit {
     this.increaseToLast();
     this.fifthClicked();
   }
+
+  getVisibilityTwo(): string {
+    if (this.navService.getDisplayedListSize() <= 6) {
+      return "hidden";
+    }
+    return "visible";
+  }
+
+  getVisibilityThree(): string {
+    if (this.navService.getDisplayedListSize() <= 12) {
+      return "hidden";
+    }
+    return "visible";
+  }
+
+  getVisibilityFour(): string {
+    if (this.navService.getDisplayedListSize() <= 18) {
+      return "hidden";
+    }
+    return "visible";
+  }
+
+  getVisibilityFive(): string {
+    if (this.navService.getDisplayedListSize() <= 24) {
+      return "hidden";
+    }
+    return "visible";
+  }
 }

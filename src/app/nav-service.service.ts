@@ -4,7 +4,6 @@ import { HttpClient } from "@angular/common/http";
 import { UserResponse } from "./userResponse";
 
 import { ContestantCombined } from "./contestantCombined";
-import { filter } from "minimatch";
 
 @Injectable({
   providedIn: "root"
@@ -45,12 +44,11 @@ export class NavService {
     res.subscribe(data => {
       console.log(data.totalElements);
       this.numberOfElements = data.totalElements;
-      // this.numberOfElements = data.totalElements;
-      this.constructNum(data.totalElements);
+      this.constructNum(this.numberOfElements);
     });
   }
 
-  constructNum(howMany: number) {
+  constructNum(howMany: number): void {
     let total: number;
 
     if (howMany % 6 > 0) {
@@ -70,6 +68,31 @@ export class NavService {
       this.num[5] = 5;
     }
     this.getContestants();
+  }
+
+  public reconstructNum(): void {
+    let howMany: number = this.displayedList.length;
+    let total: number;
+    if (howMany % 6 > 0) {
+      total = howMany / 6 + 1;
+      total = Math.trunc(total);
+    } else {
+      total = howMany / 6;
+      total = Math.trunc(total);
+    }
+    console.log("O SA AVEM ACUM " + total + " PAGINI");
+    for (let i = 0; i < 5; i++) {
+      this.num[i] = i + 1;
+    }
+    if (total >= 5) {
+      this.num[5] = total;
+    } else {
+      this.num[5] = 5;
+    }
+  }
+
+  getDisplayedListSize(): number {
+    return this.displayedList.length;
   }
 
   async getContestants() {
@@ -115,11 +138,16 @@ export class NavService {
         this.filteredArray.push(this.competersArray[i]);
       }
     }
+    this.decreaseArrayToFirst();
+    this.allFalse();
+    this.changeFirst();
     this.displayedList = this.filteredArray;
+    this.reconstructNum();
   }
 
   public resetLists(): void {
     this.displayedList = this.competersArray;
+    this.reconstructNum();
   }
 
   public allFalse(): void {

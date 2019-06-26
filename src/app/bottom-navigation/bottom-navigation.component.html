@@ -10,6 +10,7 @@
     >{{ getFirstButtonNumber() }}</span
   >
   <span
+    [ngStyle]="{ visibility: getVisibilityTwo() }"
     id="2"
     [ngClass]="
       isSecondSelected()
@@ -20,6 +21,7 @@
     >{{ getSecondButtonNumber() }}</span
   >
   <span
+    [ngStyle]="{ visibility: getVisibilityThree() }"
     id="3"
     [ngClass]="
       isThirdSelected() ? 'pagesSpanThirdSelected' : 'pagesSpanThirdUnselected'
@@ -28,6 +30,7 @@
     >{{ getThirdButtonNumber() }}</span
   >
   <span
+    [ngStyle]="{ visibility: getVisibilityFour() }"
     id="4"
     [ngClass]="
       isFourthSelected()
@@ -38,6 +41,7 @@
     >{{ getFourthButtonNumber() }}</span
   >
   <span
+    [ngStyle]="{ visibility: getVisibilityFive() }"
     id="5"
     [ngClass]="
       isFifthSelected() ? 'pagesSpanFifthSelected' : 'pagesSpanFifthUnselected'
