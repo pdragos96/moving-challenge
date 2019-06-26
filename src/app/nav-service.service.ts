@@ -105,15 +105,17 @@ export class NavService {
           this.competersArray[i].firstName.toUpperCase() +
           " " +
           this.competersArray[i].lastName.toUpperCase()
+        ).includes(nume.toUpperCase()) ||
+        (
+          this.competersArray[i].lastName.toUpperCase() +
+          " " +
+          this.competersArray[i].firstName.toUpperCase()
         ).includes(nume.toUpperCase())
       ) {
         this.filteredArray.push(this.competersArray[i]);
       }
     }
     this.displayedList = this.filteredArray;
-    console.log("LISTA FILTRATA ESTE");
-    console.log(this.filteredArray);
-    // return filteredArray;
   }
 
   public resetLists(): void {
