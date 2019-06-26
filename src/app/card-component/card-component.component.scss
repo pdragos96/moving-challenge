@@ -62,10 +62,20 @@
   float: left;
 }
 
-.positionP {
+.positionFirst {
   font-size: 25px;
   font-family: "somatic";
   font-weight: 900;
+  color: #fa056d;
+  box-sizing: border-box;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.positionP {
+  font-size: 23px;
+  font-family: "somatic";
+  font-weight: 700;
 
   box-sizing: border-box;
   margin-top: 0px;
