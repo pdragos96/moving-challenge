@@ -10,7 +10,6 @@ import { CONTESTANTS } from "../mockContestants";
   styleUrls: ["./card-component.component.scss"]
 })
 export class CardComponentComponent implements OnInit {
-  contestantsList: ContestantCombined[];
   selectedPage: number;
 
   @Input()
