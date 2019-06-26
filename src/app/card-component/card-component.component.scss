@@ -46,11 +46,9 @@
 
 .nameP {
   display: block;
-  margin: auto;
+  color: #000000;
   text-align: center;
-  font-size: 16px;
-  font-family: "somatic";
-  font-weight: 900;
+  font-size: 20px;
 }
 
 .rankDiv {
@@ -68,7 +66,7 @@
   font-size: 25px;
   font-family: "somatic";
   font-weight: 900;
-  color: #fa056d;
+
   box-sizing: border-box;
   margin-top: 0px;
   text-align: center;
@@ -85,6 +83,7 @@
   margin-top: -35px;
   line-height: 1.5;
   font-size: 1rem;
+  color: #807c7c;
 }
 
 .combinedPointsP {
@@ -96,8 +95,9 @@
   margin-inline-end: 0px;
   font-size: 25px;
   font-family: "somatic";
-  font-weight: 900;
+  font-weight: 500;
   margin: 0;
+  color: #000000;
 }
 
 .combinedUnitsP {
@@ -109,8 +109,9 @@
   margin-inline-end: 0px;
   font-size: 25px;
   font-family: "somatic";
-  font-weight: 900;
+  font-weight: 500;
   margin: 0;
+  color: #000000;
 }
 
 .categoryPointsDiv {
@@ -136,4 +137,5 @@
   margin-left: 5px;
   text-align: center;
   font-family: "somatic";
+  color: #807c7c;
 }
