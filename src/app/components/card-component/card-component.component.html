@@ -51,7 +51,12 @@
         ></path>
       </svg>
       <div class="categoryDetailedStatsDiv ">
-        {{ contestant.leaderboardPieChartData[0].points + " Points" }}
+        {{
+          contestant.leaderboardPieChartData[0].points +
+            " Points" +
+            " - " +
+            getRidingRank()
+        }}
       </div>
     </div>
     <div class="categoryDetailedPointsDiv">
@@ -82,7 +87,12 @@
         ></polygon>
       </svg>
       <div class="categoryDetailedStatsDiv " style="margin-top: 4px">
-        {{ contestant.leaderboardPieChartData[1].points + " Points" }}
+        {{
+          contestant.leaderboardPieChartData[1].points +
+            " Points" +
+            " - " +
+            getRunningRank()
+        }}
       </div>
     </div>
     <div class="categoryDetailedPointsDiv">
@@ -104,7 +114,12 @@
         ></path>
       </svg>
       <div class="categoryDetailedStatsDiv ">
-        {{ contestant.leaderboardPieChartData[2].points + " Points" }}
+        {{
+          contestant.leaderboardPieChartData[2].points +
+            " Points" +
+            " - " +
+            getSwimmingRank()
+        }}
       </div>
     </div>
     <div class="categoryDetailedPointsDiv">
@@ -114,7 +129,12 @@
         ></path>
       </svg>
       <div class="categoryDetailedStatsDiv">
-        {{ contestant.leaderboardPieChartData[3].points + " Points" }}
+        {{
+          contestant.leaderboardPieChartData[3].points +
+            " Points" +
+            " - " +
+            getWalkingRank()
+        }}
       </div>
     </div>
   </div>

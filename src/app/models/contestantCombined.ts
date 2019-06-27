@@ -1,4 +1,4 @@
-import { ChallengeInformation } from "../app/challengeInformation";
+import { ChallengeInformation } from "./challengeInformation"
 
 export interface ContestantCombined {
   id: number;

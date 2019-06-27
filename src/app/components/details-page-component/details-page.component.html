@@ -1,0 +1,10 @@
+<div class="detailsPageDiv">
+  <div class="cardsDiv">
+    <app-card-component
+      *ngFor="let contestant of getListOfContestants()"
+      class="theCardComponent"
+      [contestant]="contestant"
+    ></app-card-component>
+  </div>
+  <app-bottom-navigation></app-bottom-navigation>
+</div>

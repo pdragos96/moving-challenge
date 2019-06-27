@@ -1,22 +1,21 @@
-import { Component, OnInit } from "@angular/core";
-import { NavService } from "../nav-service.service";
+import { Component, OnInit } from '@angular/core';
+import { BottomNavigationService } from './bottom-navigation-service/bottom-navigation.service';
 
 @Component({
-  selector: "app-bottom-navigation",
-  templateUrl: "./bottom-navigation.component.html",
-  styleUrls: ["./bottom-navigation.component.scss"]
+  selector: 'app-bottom-navigation',
+  templateUrl: './bottom-navigation.component.html',
+  styleUrls: ['./bottom-navigation.component.scss']
 })
 export class BottomNavigationComponent implements OnInit {
-  constructor(private navService: NavService) {
-    this.navService.get_data();
+  constructor(private navService: BottomNavigationService) {
   }
 
   ngOnInit() {}
   firstClicked() {
-    console.log("SAL 1");
+    console.log('SAL 1');
     if (this.navService.isFirstSelected.getValue() === false) {
-      if (this.navService.num[0] != 1) {
-        if (this.navService.num[0] === 2) {
+      if (this.navService.getNum()[0] != 1) {
+        if (this.navService.getNum()[0] === 2) {
           this.navService.decreaseArray();
           this.navService.allFalse();
           this.navService.changeSecond();
@@ -34,10 +33,10 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   fifthClicked() {
-    console.log("SAL 5");
+    console.log('SAL 5');
     if (this.navService.isFifthSelected.getValue() === false) {
-      if (this.navService.num[4] != this.navService.num[5]) {
-        if (this.navService.num[4] === this.navService.num[5] - 1) {
+      if (this.navService.getNum()[4] != this.navService.getNum()[5]) {
+        if (this.navService.getNum()[4] === this.navService.getNum()[5] - 1) {
           this.navService.increaseArray();
           this.navService.allFalse();
           this.navService.changeFourth();
@@ -55,11 +54,11 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   secondClicked() {
-    console.log("SAL 2");
+    console.log('SAL 2');
     if (this.navService.isSecondSelected.getValue() === false) {
       this.navService.allFalse();
       this.navService.changeSecond();
-      if (this.navService.num[0] > 1) {
+      if (this.navService.getNum()[0] > 1) {
         this.decreaseByOne();
         this.thirdClicked();
       }
@@ -67,17 +66,17 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   thirdClicked() {
-    console.log("SAL 3");
+    console.log('SAL 3');
     this.navService.allFalse();
     this.navService.changeThird();
   }
 
   fourthClicked() {
-    console.log("SAL 4");
+    console.log('SAL 4');
     if (this.navService.isFourthSelected.getValue() === false) {
       this.navService.allFalse();
       this.navService.changeFourth();
-      if (this.navService.num[4] < this.navService.num[5]) {
+      if (this.navService.getNum()[4] < this.navService.getNum()[5]) {
         this.increaseByOne();
         this.thirdClicked();
       }
@@ -120,23 +119,23 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   getFirstButtonNumber(): number {
-    return this.navService.num[0];
+    return this.navService.getNum()[0];
   }
 
   getSecondButtonNumber(): number {
-    return this.navService.num[1];
+    return this.navService.getNum()[1];
   }
 
   getThirdButtonNumber(): number {
-    return this.navService.num[2];
+    return this.navService.getNum()[2];
   }
 
   getFourthButtonNumber(): number {
-    return this.navService.num[3];
+    return this.navService.getNum()[3];
   }
 
   getFifthButtonNumber(): number {
-    return this.navService.num[4];
+    return this.navService.getNum()[4];
   }
 
   decreaseToFirst(): void {
@@ -211,29 +210,29 @@ export class BottomNavigationComponent implements OnInit {
 
   getVisibilityTwo(): string {
     if (this.navService.getDisplayedListSize() <= 6) {
-      return "hidden";
+      return 'hidden';
     }
-    return "visible";
+    return 'visible';
   }
 
   getVisibilityThree(): string {
     if (this.navService.getDisplayedListSize() <= 12) {
-      return "hidden";
+      return 'hidden';
     }
-    return "visible";
+    return 'visible';
   }
 
   getVisibilityFour(): string {
     if (this.navService.getDisplayedListSize() <= 18) {
-      return "hidden";
+      return 'hidden';
     }
-    return "visible";
+    return 'visible';
   }
 
   getVisibilityFive(): string {
     if (this.navService.getDisplayedListSize() <= 24) {
-      return "hidden";
+      return 'hidden';
     }
-    return "visible";
+    return 'visible';
   }
 }

@@ -9,15 +9,12 @@
   grid-template-columns: 2fr 3fr;
   grid-column-gap: 15px;
   width: 100%;
-  font-family: "Open Sans L";
-  font-weight: 100;
   color: black;
   padding: 0.25rem 0.25rem 0 0;
   background-color: #fff;
   background-clip: border-box;
   border-right: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  // padding: 0 50px;
 }
 
 .cardImage {
@@ -28,11 +25,9 @@
   margin: auto;
 }
 .combinedDiv {
-  //   border: 1px solid green;
   float: right;
   width: 200px;
   margin-right: 25px;
-  //   display: inline-flex;
 }
 
 .combinedPointsDiv {
@@ -49,13 +44,11 @@
   color: #000000;
   text-align: center;
   font-size: 20px;
+  font-family: "somatic";
 }
 
 .rankDiv {
-  //   margin-bottom: 0.3rem;
   box-sizing: border-box;
-  //   display: block;
-  //   border: 1px solid blue;
   font-size: 16px;
   font-weight: 100;
   margin-left: 25px;
@@ -125,7 +118,6 @@
 }
 
 .categoryPointsDiv {
-  // border: 1px solid red;
   text-align: center;
 }
 
@@ -134,11 +126,11 @@
   height: 24px;
   width: 40px;
   text-align: center;
-  // border: 5px solid blue;
 }
 
 .categoryDetailedPointsDiv {
-  width: 50%;
+  width: 80%;
+  border: 1px solid transparent;
   display: inline-flex;
   text-align: center;
 }
