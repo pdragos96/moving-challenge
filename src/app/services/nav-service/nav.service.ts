@@ -29,7 +29,7 @@ export class NavService {
   public getDisplayedListSize(): number {
     return this.displayedList.length;
   }
-  
+
   public getFilteredArraySize(): number {
     return this.displayedList.length;
   }

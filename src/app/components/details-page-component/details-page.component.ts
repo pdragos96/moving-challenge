@@ -10,8 +10,7 @@ import { DetailsPageService } from './details-page-service/details-page.service'
 export class DetailsPageComponent implements OnInit {
   contestants = this.getListOfContestants();
 
-  constructor(private navService: DetailsPageService) {}
-  
+  constructor(private navService: DetailsPageService) {} 
   ngOnInit() {}
 
   getListOfContestants(): ContestantCombined[] {
