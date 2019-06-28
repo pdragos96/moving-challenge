@@ -19,13 +19,13 @@ export class CardComponentComponent implements OnInit {
 
   getRidingRank(): string {
     let rank = this.navService.getRidingRank(this.contestant);
-    if (rank === 1) {
-      return "Ranked " + rank + "st";
+    if (rank % 10 === 1 && (rank < 2 || rank > 20)) {
+      if (rank < 2 || rank > 20) return "Ranked " + rank + "st";
     }
-    if (rank === 2) {
+    if (rank % 10 === 2 && (rank < 2 || rank > 20)) {
       return "Ranked " + rank + "nd";
     }
-    if (rank === 3) {
+    if (rank % 10 === 3 && (rank < 2 || rank > 20)) {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
@@ -33,13 +33,13 @@ export class CardComponentComponent implements OnInit {
 
   getRunningRank(): string {
     let rank = this.navService.getRunningRank(this.contestant);
-    if (rank === 1) {
-      return "Ranked " + rank + "st";
+    if (rank % 10 === 1 && (rank < 2 || rank > 20)) {
+      if (rank < 2 || rank > 20) return "Ranked " + rank + "st";
     }
-    if (rank === 2) {
+    if (rank % 10 === 2 && (rank < 3 || rank > 20)) {
       return "Ranked " + rank + "nd";
     }
-    if (rank === 3) {
+    if (rank % 10 === 3 && (rank < 4 || rank > 20)) {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
@@ -47,13 +47,13 @@ export class CardComponentComponent implements OnInit {
 
   getSwimmingRank(): string {
     let rank = this.navService.getSwimmingRank(this.contestant);
-    if (rank === 1) {
-      return "Ranked " + rank + "st";
+    if (rank % 10 === 1 && (rank < 2 || rank > 20)) {
+      if (rank < 2 || rank > 20) return "Ranked " + rank + "st";
     }
-    if (rank === 2) {
+    if (rank % 10 === 2 && (rank < 3 || rank > 20)) {
       return "Ranked " + rank + "nd";
     }
-    if (rank === 3) {
+    if (rank % 10 === 3 && (rank < 4 || rank > 20)) {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
@@ -61,13 +61,13 @@ export class CardComponentComponent implements OnInit {
 
   getWalkingRank(): string {
     let rank = this.navService.getWalkingRank(this.contestant);
-    if (rank === 1) {
-      return "Ranked " + rank + "st";
+    if (rank % 10 === 1 && (rank < 2 || rank > 20)) {
+      if (rank < 2 || rank > 20) return "Ranked " + rank + "st";
     }
-    if (rank === 2) {
+    if (rank % 10 === 2 && (rank < 3 || rank > 20)) {
       return "Ranked " + rank + "nd";
     }
-    if (rank === 3) {
+    if (rank % 10 === 3 && (rank < 4 || rank > 20)) {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
