@@ -22,10 +22,10 @@ export class CardComponentComponent implements OnInit {
     if (rank % 10 === 1 && (rank < 2 || rank > 20)) {
       if (rank < 2 || rank > 20) return "Ranked " + rank + "st";
     }
-    if (rank % 10 === 2 && (rank < 2 || rank > 20)) {
+    if (rank % 10 === 2 && (rank < 3 || rank > 20)) {
       return "Ranked " + rank + "nd";
     }
-    if (rank % 10 === 3 && (rank < 2 || rank > 20)) {
+    if (rank % 10 === 3 && (rank < 4 || rank > 20)) {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
