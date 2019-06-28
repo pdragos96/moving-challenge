@@ -18,18 +18,58 @@ export class CardComponentComponent implements OnInit {
   ngOnInit() {}
 
   getRidingRank(): string {
-    return "Ranked " + this.navService.getRidingRank(this.contestant);
+    let rank = this.navService.getRidingRank(this.contestant);
+    if (rank === 1) {
+      return "Ranked " + rank + "st";
+    }
+    if (rank === 2) {
+      return "Ranked " + rank + "nd";
+    }
+    if (rank === 3) {
+      return "Ranked " + rank + "rd";
+    }
+    return "Ranked " + rank + "th";
   }
 
   getRunningRank(): string {
-    return "Ranked " + this.navService.getRunningRank(this.contestant);
+    let rank = this.navService.getRunningRank(this.contestant);
+    if (rank === 1) {
+      return "Ranked " + rank + "st";
+    }
+    if (rank === 2) {
+      return "Ranked " + rank + "nd";
+    }
+    if (rank === 3) {
+      return "Ranked " + rank + "rd";
+    }
+    return "Ranked " + rank + "th";
   }
 
   getSwimmingRank(): string {
-    return "Ranked " + this.navService.getSwimmingRank(this.contestant);
+    let rank = this.navService.getSwimmingRank(this.contestant);
+    if (rank === 1) {
+      return "Ranked " + rank + "st";
+    }
+    if (rank === 2) {
+      return "Ranked " + rank + "nd";
+    }
+    if (rank === 3) {
+      return "Ranked " + rank + "rd";
+    }
+    return "Ranked " + rank + "th";
   }
 
   getWalkingRank(): string {
-    return "Ranked " + this.navService.getWalkingRank(this.contestant);
+    let rank = this.navService.getWalkingRank(this.contestant);
+    if (rank === 1) {
+      return "Ranked " + rank + "st";
+    }
+    if (rank === 2) {
+      return "Ranked " + rank + "nd";
+    }
+    if (rank === 3) {
+      return "Ranked " + rank + "rd";
+    }
+    return "Ranked " + rank + "th";
   }
 }
