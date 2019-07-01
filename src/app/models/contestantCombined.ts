@@ -1,4 +1,4 @@
-import { ChallengeInformation } from "./challengeInformation"
+import { ChallengeInformation } from "./challengeInformation";
 
 export interface ContestantCombined {
   id: number;
@@ -16,4 +16,5 @@ export interface ContestantCombined {
   activityName: string;
   userChart: string;
   leaderboardPieChartData: ChallengeInformation[];
+  color: string;
 }

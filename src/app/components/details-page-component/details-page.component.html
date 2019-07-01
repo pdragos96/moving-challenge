@@ -4,6 +4,7 @@
       *ngFor="let contestant of getListOfContestants()"
       class="theCardComponent"
       [contestant]="contestant"
+      [ngStyle]="{ 'border-color': contestant.color }"
     >
     </app-card-component>
   </div>

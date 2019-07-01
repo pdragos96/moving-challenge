@@ -1,28 +1,182 @@
 <div class="sideBarDiv">
   <div class="combinedChallengesDiv">Combined Challenges</div>
   <div class="datesDiv">11/05/2019 - 15/11/2019</div>
-  <div class="searchDiv">
-    <input
-      #cautaNume
-      type="text"
-      placeholder="Search"
-      (keyup)="changeHappened(cautaNume.value)"
-    />
-    <span>
-      <svg
-        stroke="currentColor"
-        fill="none"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-    </span>
+  <div>
+    <div class="searchDiv">
+      <input
+        id="first"
+        #cautaNume
+        type="text"
+        placeholder="Search"
+        (keyup)="changeHappened(cautaNume.value)"
+        style="border: 1px solid red"
+      />
+      <span>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+    </div>
+    <button
+      mat-icon-button
+      style="margin-left: 20px"
+      (click)="firstButtonClicked()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div [ngStyle]="{ visibility: getSecondVisibility() }">
+    <div class="searchDiv">
+      <input
+        id="second"
+        #cautaNumeSecond
+        type="text"
+        placeholder="Search"
+        (keyup)="changeInSecondSearchBox(cautaNumeSecond.value)"
+        style="border: 1px solid yellow"
+      />
+      <span>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+    </div>
+    <button
+      mat-icon-button
+      style="margin-left: 20px"
+      (click)="secondButtonClicked()"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
+  </div>
+
+  <div [ngStyle]="{ visibility: getThirdVisibility() }">
+    <div class="searchDiv">
+      <input
+        id="third"
+        #cautaNumeThird
+        type="text"
+        placeholder="Search"
+        (keyup)="changeInThirdSearchBox(cautaNumeThird.value)"
+        style="border: 1px solid blue"
+      />
+      <span>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+    </div>
+    <button
+      mat-icon-button
+      style="margin-left: 20px"
+      (click)="thirdButtonClicked()"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
+  </div>
+
+  <div [ngStyle]="{ visibility: getFourthVisibility() }">
+    <div class="searchDiv">
+      <input
+        id="fourth"
+        #cautaNumeFourth
+        type="text"
+        placeholder="Search"
+        (keyup)="changeInFourthSearchBox(cautaNumeFourth.value)"
+        style="border: 1px solid green"
+      />
+      <span>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+    </div>
+    <button
+      mat-icon-button
+      style="margin-left: 20px"
+      (click)="fourthButtonClicked()"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
+  </div>
+
+  <div [ngStyle]="{ visibility: getFifthVisibility() }">
+    <div class="searchDiv">
+      <input
+        id="fifth"
+        #cautaNumeFifth
+        type="text"
+        placeholder="Search"
+        (keyup)="changeInFifthSearchBox(cautaNumeFifth.value)"
+        style="border: 1px solid orange"
+      />
+      <span>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+    </div>
+    <button
+      mat-icon-button
+      style="margin-left: 20px"
+      (click)="fifthButtonClicked()"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
   </div>
 </div>
