@@ -6,6 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+import { RouterModule, Routes } from "@angular/router";
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
@@ -18,6 +20,13 @@ import { DetailsPageComponent } from "./components/details-page-component/detail
 
 import { BottomNavigationComponent } from "./components/bottom-navigation-component/bottom-navigation.component";
 import { CardComponentComponent } from "./components/card-component/card-component.component";
+import { TracksPageComponent } from "./components/tracks-page-component/tracks-page.component";
+import { TrackDetailsComponent } from "./components/track-details-component/track-details.component";
+
+const appRoutes: Routes = [
+  { path: "tracks/:userId", component: TracksPageComponent },
+  { path: "", component: DetailsPageComponent }
+];
 
 @NgModule({
   declarations: [
@@ -26,9 +35,12 @@ import { CardComponentComponent } from "./components/card-component/card-compone
     SidebarComponent,
     DetailsPageComponent,
     BottomNavigationComponent,
-    CardComponentComponent
+    CardComponentComponent,
+    TracksPageComponent,
+    TrackDetailsComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

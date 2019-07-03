@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ContestantCombined } from "../../models/contestantCombined";
 import { CardComponentService } from "./card-component-service/card-component.service";
+import { TracksDataService } from "src/app/services/tracks-data-service/tracks-data.service";
 
 @Component({
   selector: "app-card-component",
@@ -13,7 +14,13 @@ export class CardComponentComponent implements OnInit {
   @Input()
   public contestant: ContestantCombined;
 
-  constructor(private navService: CardComponentService) {}
+  constructor(
+    private navService: CardComponentService
+  ) // private tracksDataService: TracksDataService
+  {
+    // this.tracksDataService.setId(this.contestant.userId);
+    // this.tracksDataService.setAvatar(this.contestant.avatar);
+  }
 
   ngOnInit() {}
 

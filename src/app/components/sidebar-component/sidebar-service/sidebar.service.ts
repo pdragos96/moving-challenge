@@ -15,7 +15,12 @@ export class SidebarService {
     this.navService.resetLists();
   }
 
+  public goToFirst(): void {
+    this.bottomService.resetNavigation();
+  }
+
   public addFromFirstSearch(nume: string): void {
+    this.goToFirst();
     if (nume === "") {
       this.makeFirstVoid();
     } else {
@@ -24,6 +29,7 @@ export class SidebarService {
   }
 
   public addFromSecondSearch(nume: string): void {
+    this.goToFirst();
     if (nume === "") {
       this.makeSecondVoid();
     } else {
@@ -32,6 +38,7 @@ export class SidebarService {
   }
 
   public addFromThirdSearch(nume: string): void {
+    this.goToFirst();
     if (nume === "") {
       this.makeThirdVoid();
     } else {
@@ -40,6 +47,7 @@ export class SidebarService {
   }
 
   public addFromFourthSearch(nume: string): void {
+    this.goToFirst();
     if (nume === "") {
       this.makeFourthVoid();
     } else {
@@ -48,6 +56,7 @@ export class SidebarService {
   }
 
   public addFromFifthSearch(nume: string): void {
+    this.goToFirst();
     if (nume === "") {
       this.makeFifthVoid();
     } else {

@@ -10,10 +10,11 @@
   line-height: 1.5;
   color: #212529;
   display: block;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .contentDiv {
+  // border: 5px solid red;
   width: 100%;
   height: 100%;
   margin-top: 62.4px;
@@ -24,12 +25,23 @@
   display: flex;
 }
 
-.appToolbar {
-  width: 100%;
-}
+// .appToolbar {
+// width: 100%;
+// }
 
 .appSidebar {
   width: 20%;
+  height: 100%;
+}
+
+.routerComponent {
+  width: 0%;
+  height: 0%;
+  // border: 5px solid blue;
+}
+
+.routerDiv {
+  width: 80%;
   height: 100%;
 }
 

@@ -1,0 +1,33 @@
+<div class="tracksDiv">
+  <div class="tracksContestantDetailsDiv">
+    <p class="tracksContestantNameDiv">NUMELE CONCURENTULUI</p>
+  </div>
+  <div class="tracksContentDiv">
+    <div class="tracksContentDescriptionDiv">
+      <div class="tracksContentDescriptionOneDiv"></div>
+      <div class="tracksContentDescriptionTwoDiv">
+        <span>Started</span>
+      </div>
+      <div class="tracksContentDescriptionThreeDiv">
+        <span>Name</span>
+      </div>
+      <div class="tracksContentDescriptionFourDiv">
+        <span>Units(km)</span>
+      </div>
+      <div class="tracksContentDescriptionFiveDiv">
+        <span>Average speed</span>
+      </div>
+      <div class="tracksContentDescriptionSixDiv">
+        <span>Pace</span>
+      </div>
+      <div class="tracksContentDescriptionSevenDiv">
+        <span>Elapsed time</span>
+      </div>
+    </div>
+    <app-track-details
+      *ngFor="let track of getTracksList()"
+      class="theTrackComponent"
+      [track]="track"
+    ></app-track-details>
+  </div>
+</div>
