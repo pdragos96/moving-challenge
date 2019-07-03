@@ -92,7 +92,14 @@
     </svg>
   </div>
   <div class="trackDetailsDate">{{ track.startedAt }}</div>
-  <div class="trackDetailsName">{{ track.name }}</div>
+  <div class="trackDetailsName">
+    <a
+      href="{{ getTrackDetails() }}"
+      target="_blank"
+      class="sc-dqBHgY gzndJn"
+      >{{ track.name }}</a
+    >
+  </div>
   <div class="trackDetailsUnits">{{ track.units + "km" }}</div>
   <div class="trackDetailsAvgSpeed">{{ track.averageSpeed }}</div>
   <div class="trackDetailsPace">{{ track.pace }}</div>

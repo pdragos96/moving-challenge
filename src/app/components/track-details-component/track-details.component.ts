@@ -21,4 +21,8 @@ export class TrackDetailsComponent implements OnInit {
   public getActivityName() {
     return this.track.activityName;
   }
+
+  public getTrackDetails() {
+    return "http://www.sports-tracker.com/workout/null/" + this.track.id;
+  }
 }
