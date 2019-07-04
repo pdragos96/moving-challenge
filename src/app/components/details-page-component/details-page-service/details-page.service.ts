@@ -21,4 +21,8 @@ export class DetailsPageService {
   getSelectedPage(): number {
     return this.bottomService.getSelectedPage();
   }
+
+  getContestantsListLength(): number {
+    return this.navService.getDisplayedListSize();
+  }
 }

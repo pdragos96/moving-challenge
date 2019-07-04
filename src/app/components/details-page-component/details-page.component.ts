@@ -20,4 +20,11 @@ export class DetailsPageComponent implements OnInit {
   getSelectedPage(): number {
     return this.navService.getSelectedPage();
   }
+
+  getBottomNavVisibility() {
+    if (this.navService.getContestantsListLength() > 0) {
+      return "visible";
+  }
+    return "hidden";
+  }
 }

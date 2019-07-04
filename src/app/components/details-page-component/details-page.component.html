@@ -8,5 +8,9 @@
     >
     </app-card-component>
   </div>
-  <app-bottom-navigation></app-bottom-navigation>
+  <app-bottom-navigation
+    [ngStyle]="{
+      visibility: getBottomNavVisibility()
+    }"
+  ></app-bottom-navigation>
 </div>
