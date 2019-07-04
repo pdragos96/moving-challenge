@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { UserResponse } from "../../models/userResponse";
-
 import { ContestantCombined } from "../../models/contestantCombined";
 
 @Injectable({
