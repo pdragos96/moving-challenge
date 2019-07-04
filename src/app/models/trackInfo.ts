@@ -8,6 +8,6 @@ export interface TrackInfo {
   polyline: string;
   source: string;
   sportsTrackerUsername: string;
-  startedAt: number;
+  startedAt: Date;
   units: number;
 }

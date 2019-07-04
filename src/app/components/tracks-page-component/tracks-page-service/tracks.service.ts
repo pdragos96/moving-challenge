@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { UserData } from "src/app/models/userData";
 import { TrackInfo } from "src/app/models/trackInfo";
 import { TracksResponse } from "src/app/models/tracksResponse";
+import { NavService } from 'src/app/services/nav-service/nav.service';
 
 @Injectable({
   providedIn: "root"
@@ -19,7 +20,7 @@ export class TracksPageService {
   tracksArray: TrackInfo[] = new Array();
   numberOfElements: number;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private navService:NavService) {}
 
   public async loginTry(id: number) {
     await this.httpClient
@@ -59,5 +60,13 @@ export class TracksPageService {
 
   public getTracksList(): TrackInfo[] {
     return this.tracksArray;
+  }
+
+  public getAvatarById(id: number): string {
+    return this.navService.getAvatarById(id);
+  }
+
+  public getNameById(id: number): string {
+    return this.navService.getNameById(id);
   }
 }

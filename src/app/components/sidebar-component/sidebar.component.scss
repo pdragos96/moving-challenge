@@ -18,6 +18,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.searchInputDivContainer {
+  height: 61px;
+  display: flex;
+}
+
 .datesDiv {
   font-family: "somatic";
   font-weight: 800;

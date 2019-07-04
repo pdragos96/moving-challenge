@@ -3,6 +3,43 @@
   padding: 25px;
 }
 
+span {
+  // box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Open Sans B";
+  color: #31b0e3;
+  font-weight: bold;
+}
+
+.tracksContestantDetailsDiv {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+}
+
+.trackContestantAvatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tracksContestantNameP {
+  vertical-align: bottom;
+  font-family: "Open Sans B";
+  font-size: 14px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
 .tracksContentDescriptionDiv {
   display: grid;
   grid-template-columns: 18px 1fr 2fr repeat(4, 1fr);

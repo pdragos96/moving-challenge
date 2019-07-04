@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { TracksPageService } from "./tracks-page-service/tracks.service";
-import { TracksDataService } from "src/app/services/tracks-data-service/tracks-data.service";
 import { TrackInfo } from "src/app/models/trackInfo";
 
 @Component({
@@ -11,10 +10,8 @@ import { TrackInfo } from "src/app/models/trackInfo";
 })
 export class TracksPageComponent implements OnInit {
   id: number;
-  // tracksList: TrackInfo[] = this.getTracksList();
 
   constructor(
-    // private tracksDataService: TracksDataService,
     private activatedRoute: ActivatedRoute,
     private tracksService: TracksPageService
   ) {
@@ -32,10 +29,11 @@ export class TracksPageComponent implements OnInit {
     return this.tracksService.getTracksList();
   }
 
-  public getName(): string {
-    // this.activatedRoute.params.subscribe(params => {
-    //   this.id = params["userId"];
-    // });
-    return "TEST " + this.id;
+  public getAvatarById(): string {
+    return this.tracksService.getAvatarById(this.id);
+  }
+
+  public getNameById(): string {
+    return this.tracksService.getNameById(this.id);
   }
 }

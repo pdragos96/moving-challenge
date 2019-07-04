@@ -22,7 +22,14 @@ export class TrackDetailsComponent implements OnInit {
     return this.track.activityName;
   }
 
-  public getTrackDetails() {
-    return "http://www.sports-tracker.com/workout/null/" + this.track.id;
+  public getTrackDetails(): string {
+    if (this.track.source === "sportsTracker") {
+      return "http://www.sports-tracker.com/workout/null/" + this.track.id;
+    } else {
+      return "https://www.strava.com/activities/" + this.track.id;
+    }
+  }
+  public getUnits(): string {
+    return this.track.units.toFixed(2);
   }
 }

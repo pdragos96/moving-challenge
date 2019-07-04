@@ -1,7 +1,7 @@
 <div class="sideBarDiv">
   <div class="combinedChallengesDiv">Combined Challenges</div>
   <div class="datesDiv">11/05/2019 - 15/11/2019</div>
-  <div>
+  <div class="searchInputDivContainer">
     <div class="searchDiv">
       <input
         id="first"
@@ -36,7 +36,11 @@
       <mat-icon>add</mat-icon>
     </button>
   </div>
-  <div [ngStyle]="{ visibility: getSecondVisibility() }">
+
+  <div
+    [ngStyle]="{ visibility: getSecondVisibility() }"
+    class="searchInputDivContainer"
+  >
     <div class="searchDiv">
       <input
         id="second"
@@ -72,7 +76,13 @@
     </button>
   </div>
 
-  <div [ngStyle]="{ visibility: getThirdVisibility() }">
+  <div
+    [ngStyle]="{
+      visibility: getThirdVisibility(),
+      'margin-top': getThirdMargin()
+    }"
+    class="searchInputDivContainer"
+  >
     <div class="searchDiv">
       <input
         id="third"
@@ -108,7 +118,13 @@
     </button>
   </div>
 
-  <div [ngStyle]="{ visibility: getFourthVisibility() }">
+  <div
+    [ngStyle]="{
+      visibility: getFourthVisibility(),
+      'margin-top': getFourthMargin()
+    }"
+    class="searchInputDivContainer"
+  >
     <div class="searchDiv">
       <input
         id="fourth"
@@ -144,7 +160,13 @@
     </button>
   </div>
 
-  <div [ngStyle]="{ visibility: getFifthVisibility() }">
+  <div
+    [ngStyle]="{
+      visibility: getFifthVisibility(),
+      'margin-top': getFifthMargin()
+    }"
+    class="searchInputDivContainer"
+  >
     <div class="searchDiv">
       <input
         id="fifth"

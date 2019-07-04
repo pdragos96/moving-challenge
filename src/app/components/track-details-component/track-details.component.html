@@ -91,17 +91,24 @@
       ></path>
     </svg>
   </div>
-  <div class="trackDetailsDate">{{ track.startedAt }}</div>
+  <div class="trackDetailsDate">
+    <span>{{ track.startedAt | date: "MM/dd/yyyy h:mma" }}</span>
+  </div>
   <div class="trackDetailsName">
-    <a
-      href="{{ getTrackDetails() }}"
-      target="_blank"
-      class="sc-dqBHgY gzndJn"
-      >{{ track.name }}</a
+    <a href="{{ getTrackDetails() }}" target="_blank" class="sc-dqBHgY gzndJn"
+      ><span class="nameSpan">{{ track.name }}</span></a
     >
   </div>
-  <div class="trackDetailsUnits">{{ track.units + "km" }}</div>
-  <div class="trackDetailsAvgSpeed">{{ track.averageSpeed }}</div>
-  <div class="trackDetailsPace">{{ track.pace }}</div>
-  <div class="trackDetailsElapsedTime">{{ getElapsedTime() }}</div>
+  <div class="trackDetailsUnits">
+    <span>{{ getUnits() + "km" }}</span>
+  </div>
+  <div class="trackDetailsAvgSpeed">
+    <span>{{ track.averageSpeed }}</span>
+  </div>
+  <div class="trackDetailsPace">
+    <span>{{ track.pace }}</span>
+  </div>
+  <div class="trackDetailsElapsedTime">
+    <span>{{ getElapsedTime() }}</span>
+  </div>
 </div>

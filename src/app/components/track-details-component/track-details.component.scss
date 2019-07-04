@@ -5,8 +5,20 @@
   grid-column-gap: 1.5rem;
   border-top: 1px solid #dee2e6;
   padding: 0.75rem;
-  font-size: 13px;
+  font-size: 14px;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+span {
+  color: dimgray;
+}
+
+.nameSpan:hover {
+  color: #f380c8;
 }
 
 .trackDetailsActivityIcon {

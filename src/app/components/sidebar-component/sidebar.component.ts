@@ -8,7 +8,11 @@ import { SidebarService } from "./sidebar-service/sidebar.service";
   styleUrls: ["./sidebar.component.scss"]
 })
 export class SidebarComponent implements OnInit {
-  contorSearch: number = 1;
+
+  isSecondVisible: boolean = false;
+  isThirdVisible: boolean = false;
+  isFourthVisible: boolean = false;
+  isFifthVisible: boolean = false;
 
   constructor(private navService: SidebarService) {}
 
@@ -19,7 +23,6 @@ export class SidebarComponent implements OnInit {
   }
 
   public changeInSecondSearchBox(nume: string): void {
-    // console.log("AM PRIMIT PRIMIT PRIMIT" + nume);
     this.navService.addFromSecondSearch(nume);
   }
 
@@ -36,64 +39,100 @@ export class SidebarComponent implements OnInit {
   }
 
   public firstButtonClicked(): void {
-    this.contorSearch++;
+    if (this.isSecondVisible === false) {this.isSecondVisible = true; return;}
+    if (this.isThirdVisible === false) {this.isThirdVisible = true; return;}
+    if (this.isFourthVisible === false) {this.isFourthVisible = true; return;}
+    if (this.isFifthVisible === false) {this.isFifthVisible = true; return;}
   }
 
   public secondButtonClicked(): void {
     (<HTMLInputElement>document.getElementById("second")).value = "";
-    this.contorSearch = 1;
+    this.isSecondVisible = false;
     this.changeInSecondSearchBox("");
-    this.changeInThirdSearchBox("");
-    this.changeInFourthSearchBox("");
-    this.changeInFifthSearchBox("");
+
   }
 
   public thirdButtonClicked(): void {
     (<HTMLInputElement>document.getElementById("third")).value = "";
-    this.contorSearch = 2;
+    this.isThirdVisible = false;
     this.changeInThirdSearchBox("");
-    this.changeInFourthSearchBox("");
-    this.changeInFifthSearchBox("");
+
   }
 
   public fourthButtonClicked(): void {
     (<HTMLInputElement>document.getElementById("fourth")).value = "";
-    this.contorSearch = 3;
+    this.isFourthVisible = false;
     this.changeInFourthSearchBox("");
-    this.changeInFifthSearchBox("");
   }
 
   public fifthButtonClicked(): void {
     (<HTMLInputElement>document.getElementById("fifth")).value = "";
-    this.contorSearch = 4;
+    this.isFifthVisible = false;
     this.changeInFifthSearchBox("");
   }
 
   public getSecondVisibility(): string {
-    if (this.contorSearch >= 2) {
+    if (this.isSecondVisible === true) {
       return "visible";
     }
     return "hidden";
   }
 
   public getThirdVisibility(): string {
-    if (this.contorSearch >= 3) {
+    if (this.isThirdVisible === true) {
       return "visible";
     }
     return "hidden";
   }
 
   public getFourthVisibility(): string {
-    if (this.contorSearch >= 4) {
+    if (this.isFourthVisible === true) {
       return "visible";
     }
     return "hidden";
   }
 
   public getFifthVisibility(): string {
-    if (this.contorSearch >= 5) {
+    if (this.isFifthVisible === true) {
       return "visible";
     }
     return "hidden";
   }
+
+  public getThirdMargin(): string {
+    if (this.isThirdVisible) {
+      if (!this.isSecondVisible) {
+        return "-61px";
+      } 
+    }
+    return "0px";
+  }
+
+  public getFourthMargin(): string {
+    if (this.isFourthVisible) {
+      if (!this.isThirdVisible && !this.isSecondVisible) {
+        return "-122px";
+      }
+      if (!this.isThirdVisible) {
+        return "-61px";
+      }
+    }
+    return "0px";
+  }
+
+  public getFifthMargin(): string {
+    if (this.isFifthVisible) {
+      if (!this.isFourthVisible && !this.isThirdVisible && !this.isSecondVisible) {
+        return "-183px";
+      }
+      if (!this.isFourthVisible && !this.isThirdVisible) {
+        return "-122px";
+      }
+      if (!this.isFourthVisible) {
+        return "-61px";
+      }
+    }
+    return "0px";
+  }
+
 }
