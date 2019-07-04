@@ -22,10 +22,13 @@ import { BottomNavigationComponent } from "./components/bottom-navigation-compon
 import { CardComponentComponent } from "./components/card-component/card-component.component";
 import { TracksPageComponent } from "./components/tracks-page-component/tracks-page.component";
 import { TrackDetailsComponent } from "./components/track-details-component/track-details.component";
+import { LoginFormComponent } from './components/login-form-component/login-form.component';
+import { MainScreenComponent } from './components/main-screen/main-screen.component';
 
 const appRoutes: Routes = [
   { path: "tracks/:userId", component: TracksPageComponent },
-  { path: "", component: DetailsPageComponent }
+  { path: "login", component: LoginFormComponent},
+  { path: "", component: MainScreenComponent }
 ];
 
 @NgModule({
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     BottomNavigationComponent,
     CardComponentComponent,
     TracksPageComponent,
-    TrackDetailsComponent
+    TrackDetailsComponent,
+    LoginFormComponent,
+    MainScreenComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

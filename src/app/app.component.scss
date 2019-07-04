@@ -35,14 +35,20 @@
 }
 
 .routerComponent {
-  width: 0%;
-  height: 0%;
+  // width: 0px;
+  // height: 0px;
   // border: 5px solid blue;
 }
 
 .routerDiv {
-  width: 80%;
-  height: 100%;
+  width: 100%;
+
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // height: 100%;
+  border: 5px solid red;
 }
 
 .appDetailsPage {
