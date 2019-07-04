@@ -8,7 +8,7 @@ import { UserData } from 'src/app/models/userData';
 export class LoginService {
 
   loginURL: string = "https://sports.fortech.ro/ws/user/login";
-  user: UserData = { password: "Asdfqwzxc1", username: "dragos.podariu" };
+  user: UserData = { password: "", username: "" };
   logged: string = "no";
 
   constructor(private httpClient: HttpClient) { }
