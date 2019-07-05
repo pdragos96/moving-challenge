@@ -50,4 +50,11 @@ export class ToolbarComponent implements OnInit {
     }
     return "https://png.icons8.com/search";
   }
+
+  getIsLogged(): string {
+    if (localStorage.getItem("currentUser") != "") {
+      return "true";
+    }
+    return "false";
+  }
 }

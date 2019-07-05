@@ -9,7 +9,13 @@
   <div class="loginDiv" (click)="pushedLogButton()">
     <!-- <a class="imgContainer"> -->
     <img
+      *ngIf="getIsLogged() === 'true'"
       src="data:image/png;base64,{{ getAvatarByUsername() }}"
+      class="imgLogin"
+    />
+    <img
+      *ngIf="getIsLogged() === 'false'"
+      src="{{ getAvatarByUsername() }}"
       class="imgLogin"
     />
     <!-- </a> -->
