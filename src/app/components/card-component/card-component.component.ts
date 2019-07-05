@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { ContestantCombined } from "../../models/contestantCombined";
 import { CardComponentService } from "./card-component-service/card-component.service";
 import { TracksDataService } from "src/app/services/tracks-data-service/tracks-data.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-card-component",
@@ -15,9 +16,9 @@ export class CardComponentComponent implements OnInit {
   public contestant: ContestantCombined;
 
   constructor(
-    private navService: CardComponentService
-  ) // private tracksDataService: TracksDataService
-  {
+    private navService: CardComponentService,
+    private router: Router
+  ) {
     // this.tracksDataService.setId(this.contestant.userId);
     // this.tracksDataService.setAvatar(this.contestant.avatar);
   }
@@ -78,5 +79,13 @@ export class CardComponentComponent implements OnInit {
       return "Ranked " + rank + "rd";
     }
     return "Ranked " + rank + "th";
+  }
+
+  public clickedOnCard(): void {
+    if (localStorage.getItem("currentUser") != "") {
+      this.router.navigateByUrl("/tracks/" + this.contestant.userId);
+    } else {
+      this.router.navigateByUrl("/login");
+    }
   }
 }

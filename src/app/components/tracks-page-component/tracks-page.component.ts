@@ -20,7 +20,7 @@ export class TracksPageComponent implements OnInit {
     });
     // this.id = tracksDataService.getId();
     console.log("AVEM ID UL " + this.id);
-    this.tracksService.loginTry(this.id);
+    this.tracksService.getTracksInfo(this.id);
   }
 
   ngOnInit() {}

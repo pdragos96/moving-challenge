@@ -1,38 +1,25 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { UserData } from 'src/app/models/userData';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { UserData } from "src/app/models/userData";
+import { tap } from "rxjs/operators";
+import { NavService } from "src/app/services/nav-service/nav.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class LoginService {
-
   loginURL: string = "https://sports.fortech.ro/ws/user/login";
-  user: UserData = { password: "", username: "" };
-  logged: string = "no";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  public async tryToLogin() {
-    await this.httpClient
-      .post<UserData>("https://sports.fortech.ro/ws/user/login", this.user, {
+  public tryToLogin(user: string, pass: string) {
+    const userLogin: UserData = { password: pass, username: user };
+    return this.httpClient.post<UserData>(
+      "https://sports.fortech.ro/ws/user/login",
+      userLogin,
+      {
         observe: "response"
-      })
-      .subscribe(
-        response => {
-          this.logged = "yes;"
-          console.log("PRIMIT RASPUNS");
-          console.log(response.headers.get("x-fortech-auth"));
-        },
-        err => {
-          this.logged = "no";
-          console.log("User authentication failed!");
-        }
-      );
-    console.log("INCERCAM");
-  }
-
-  public getLogged(): string {
-    return this.logged;
+      }
+    );
   }
 }

@@ -274,7 +274,6 @@ export class NavService {
   }
 
   public getAvatarById(id: number): string {
-    
     for (let el of this.competersArray) {
       if (el.userId == id) {
         return el.avatar;
@@ -283,10 +282,19 @@ export class NavService {
     return "";
   }
 
+  public getAvatarByUsername(userName: string): string {
+    for (let el of this.competersArray) {
+      if (el.userName == userName) {
+        return el.avatar;
+      }
+    }
+    return "";
+  }
+
   public getNameById(id: number): string {
     for (let el of this.competersArray) {
-      if (el.userId == id ) {
-          return el.firstName + " " + el.lastName;
+      if (el.userId == id) {
+        return el.firstName + " " + el.lastName;
       }
     }
     return "";

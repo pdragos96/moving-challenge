@@ -1,15 +1,13 @@
-<a
-  class="theCard"
-  [routerLink]="['/tracks', contestant.userId]"
-  [state]="{ hello: 'world' }"
->
+<a class="theCard" (click)="clickedOnCard()">
   <div class="firstDivInsideCard"></div>
   <img
     src="data:image/png;base64,{{ contestant.avatar }}"
     class="cardImage"
     alt=""
   />
-  <p class="nameP">{{ contestant.firstName + " " + contestant.lastName }}</p>
+  <p class="nameP">
+    {{ contestant.firstName + " " + contestant.lastName }}
+  </p>
 
   <div class="leftInfoDiv">
     <div class="combinedPointsDiv">

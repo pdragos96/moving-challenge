@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { UserData } from "src/app/models/userData";
 import { TrackInfo } from "src/app/models/trackInfo";
 import { TracksResponse } from "src/app/models/tracksResponse";
-import { NavService } from 'src/app/services/nav-service/nav.service';
+import { NavService } from "src/app/services/nav-service/nav.service";
 
 @Injectable({
   providedIn: "root"
@@ -20,26 +20,9 @@ export class TracksPageService {
   tracksArray: TrackInfo[] = new Array();
   numberOfElements: number;
 
-  constructor(private httpClient: HttpClient, private navService:NavService) {}
+  constructor(private httpClient: HttpClient, private navService: NavService) {}
 
-  public async loginTry(id: number) {
-    await this.httpClient
-      .post<UserData>("https://sports.fortech.ro/ws/user/login", this.user, {
-        observe: "response"
-      })
-      .subscribe(
-        response => {
-          console.log(response.headers.get("x-fortech-auth"));
-          this.getTracksInfo(id, response.headers.get("x-fortech-auth"));
-        },
-        err => {
-          console.log("User authentication failed!");
-        }
-      );
-    console.log("INCERCAM");
-  }
-
-  public async getTracksInfo(id: number, authentication: string) {
+  public async getTracksInfo(id: number) {
     await this.httpClient
       .get<TracksResponse>(
         this.tracksStringBeggining +
@@ -48,7 +31,7 @@ export class TracksPageService {
           id +
           this.tracksStringEnd,
         {
-          headers: { "x-fortech-auth": authentication }
+          headers: { "x-fortech-auth": localStorage.getItem("authKey") }
         }
       )
       .subscribe(response => {

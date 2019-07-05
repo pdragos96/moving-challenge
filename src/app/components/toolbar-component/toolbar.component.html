@@ -6,10 +6,13 @@
     routerLink="/"
   />
   <label class="labelToolbar">Fortech's Moving Challenge</label>
-  <div class="loginDiv" [routerLink]="['/login']">
+  <div class="loginDiv" (click)="pushedLogButton()">
     <!-- <a class="imgContainer"> -->
-    <img class="imgLogin" />
+    <img
+      src="data:image/png;base64,{{ getAvatarByUsername() }}"
+      class="imgLogin"
+    />
     <!-- </a> -->
-    <a class="loginButton">Login</a>
+    <a class="loginButton">{{ getLoggedStatus() }}</a>
   </div>
 </mat-toolbar>

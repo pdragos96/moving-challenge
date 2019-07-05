@@ -6,20 +6,24 @@
   <form>
     <div class="loginInputsDiv">
       <input
+        #username
         type="email"
         placeholder="Email"
         autocomplete="email"
-        value=""
+        value="dragos.podariu"
       /><input
+        #password
         type="password"
         placeholder="Password"
         autocomplete="current-password"
-        value=""
+        value="Asdfqwzxc1"
       />
     </div>
   </form>
-  <div class="loginDividerDiv"></div>
+  <div class="loginDividerDiv">{{ inputCorrect }}</div>
   <div class="loginButtonDiv">
-    <button type="button" (click)="tryLogin()">Log In</button>
+    <button type="button" (click)="tryLogin(username.value, password.value)">
+      Log In
+    </button>
   </div>
 </div>
