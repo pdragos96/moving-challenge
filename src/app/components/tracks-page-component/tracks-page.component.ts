@@ -18,12 +18,14 @@ export class TracksPageComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params["userId"];
     });
-    // this.id = tracksDataService.getId();
+
     console.log("AVEM ID UL " + this.id);
     this.tracksService.getTracksInfo(this.id);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem("isBackVisible", "visible");
+  }
 
   public getTracksList(): TrackInfo[] {
     return this.tracksService.getTracksList();

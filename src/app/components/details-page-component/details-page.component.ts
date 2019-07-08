@@ -11,7 +11,9 @@ export class DetailsPageComponent implements OnInit {
   contestants = this.getListOfContestants();
 
   constructor(private navService: DetailsPageService) {}
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem("isBackVisible", "hidden");
+  }
 
   getListOfContestants(): ContestantCombined[] {
     return this.navService.getTheSixContestants();

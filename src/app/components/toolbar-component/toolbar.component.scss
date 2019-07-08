@@ -2,7 +2,7 @@
   position: fixed;
   display: flex;
   -webkit-box-pack: center;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   background-color: white;
   width: 100%;
@@ -11,7 +11,27 @@
   box-shadow: 0px 0px 20px -8px rgba(176, 176, 176, 1);
 }
 
+.backButtonDiv {
+  margin-left: 5%;
+  justify-content: center;
+}
+
+.backButton {
+  display: flex;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.titleDiv {
+  margin: 0px auto;
+  display: flex;
+  -webkit-box-pack: center;
+  align-items: center;
+}
+
 .imgFortec {
+  display: flex;
+  margin: 0px auto;
 }
 
 .labelToolbar {
@@ -24,7 +44,7 @@
   align-items: center;
   padding: 0.5rem;
   cursor: pointer;
-  margin-left: 25px;
+  margin-right: 5%;
   box-sizing: border-box;
   font-size: 1rem;
   font-weight: 400;

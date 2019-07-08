@@ -57,4 +57,8 @@ export class ToolbarComponent implements OnInit {
     }
     return "false";
   }
+
+  public getBackVisibility(): string {
+    return localStorage.getItem("isBackVisible");
+  }
 }

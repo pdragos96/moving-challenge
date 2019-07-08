@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, AfterViewChecked } from "@angular/core";
 
 import { SidebarService } from "./sidebar-service/sidebar.service";
 
@@ -7,7 +7,7 @@ import { SidebarService } from "./sidebar-service/sidebar.service";
   templateUrl: "./sidebar.component.html",
   styleUrls: ["./sidebar.component.scss"]
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements AfterViewChecked {
 
   isSecondVisible: boolean = false;
   isThirdVisible: boolean = false;
@@ -16,7 +16,9 @@ export class SidebarComponent implements OnInit {
 
   constructor(private navService: SidebarService) {}
 
-  ngOnInit() {}
+  ngAfterViewChecked() {
+    this.navService.makeAllVoid();
+  }
 
   public changeHappened(nume: string): void {
     this.navService.addFromFirstSearch(nume);

@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     localStorage.setItem("authKey", "");
     localStorage.setItem("currentUser", "");
+    localStorage.setItem("isBackVisible", "hidden");
   }
 
   constructor(private navService: NavService) {

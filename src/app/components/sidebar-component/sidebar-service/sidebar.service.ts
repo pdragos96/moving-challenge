@@ -83,4 +83,12 @@ export class SidebarService {
   public makeFifthVoid(): void {
     this.navService.makeFifthVoid();
   }
+
+  public makeAllVoid(): void {
+    this.makeFirstVoid();
+    this.makeSecondVoid();
+    this.makeThirdVoid();
+    this.makeFourthVoid();
+    this.makeFifthVoid();
+  }
 }

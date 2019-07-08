@@ -13,7 +13,9 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem("isBackVisible","visible");
+  }
 
   public tryLogin(user: string, pass: string) {
     let el = this.loginService.tryToLogin(user, pass);
