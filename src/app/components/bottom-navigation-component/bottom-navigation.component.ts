@@ -234,4 +234,8 @@ export class BottomNavigationComponent {
     }
     return 'visible';
   }
+
+  getVisibility(): string {
+    return this.navService.getVisibility();
+  }
 }

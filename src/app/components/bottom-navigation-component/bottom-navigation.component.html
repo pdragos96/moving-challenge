@@ -49,6 +49,16 @@
     (click)="fifthClicked()"
     >{{ getFifthButtonNumber() }}</span
   >
-  <span class="pagesSpanBottom" (click)="nextClicked()">›</span>
-  <span class="pagesSpanBottom" (click)="lastClicked()">››</span>
+  <span
+    class="pagesSpanBottom"
+    (click)="nextClicked()"
+    [ngStyle]="{ visibility: getVisibility() }"
+    >›</span
+  >
+  <span
+    class="pagesSpanBottom"
+    (click)="lastClicked()"
+    [ngStyle]="{ visibility: getVisibility() }"
+    >››</span
+  >
 </div>

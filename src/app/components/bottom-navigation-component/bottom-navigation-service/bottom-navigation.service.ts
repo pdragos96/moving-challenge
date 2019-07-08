@@ -130,4 +130,18 @@ export class BottomNavigationService {
     this.changeFirst();
   }
 
+  public getVisibility(): string {
+    if (this.navService.getDisplayedListSize() % 6 == 0) {
+      if (this.navService.getDisplayedListSize() / 6 == this.getSelectedPage()) {
+        return 'hidden';
+      }
+    } else {
+        if (Math.trunc (this.navService.getDisplayedListSize() / 6) + 1 == this.getSelectedPage() ) {
+        return 'hidden';
+      }
+    }
+    if (this.navService.getDisplayedListSize() == 0) {return "hidden";}
+    return 'visible';
+  }
+
 }
