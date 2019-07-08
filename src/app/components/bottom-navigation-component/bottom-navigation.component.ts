@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component } from '@angular/core';
 import { BottomNavigationService } from './bottom-navigation-service/bottom-navigation.service';
 
 @Component({
@@ -6,12 +6,9 @@ import { BottomNavigationService } from './bottom-navigation-service/bottom-navi
   templateUrl: './bottom-navigation.component.html',
   styleUrls: ['./bottom-navigation.component.scss']
 })
-export class BottomNavigationComponent implements AfterViewChecked {
-  constructor(private navService: BottomNavigationService) {}
+export class BottomNavigationComponent {
+  constructor(private navService: BottomNavigationService) {this.navService.resetNavigation();}
 
-  ngAfterViewChecked() {
-    this.beginClicked();
-  }
 
   firstClicked() {
     console.log('SAL 1');
