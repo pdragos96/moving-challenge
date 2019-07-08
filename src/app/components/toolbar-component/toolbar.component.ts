@@ -48,7 +48,7 @@ export class ToolbarComponent implements OnInit {
         localStorage.getItem("currentUser")
       );
     }
-    return "https://png.icons8.com/search";
+    return "assets/user_icon.png";
   }
 
   getIsLogged(): string {
