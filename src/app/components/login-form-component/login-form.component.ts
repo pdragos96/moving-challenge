@@ -42,4 +42,6 @@ export class LoginFormComponent implements OnInit {
       this.router.navigateByUrl("/dashboard");
     }
   }
+
+  public goBack(): void {}
 }
