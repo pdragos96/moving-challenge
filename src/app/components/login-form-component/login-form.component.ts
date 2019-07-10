@@ -14,7 +14,7 @@ export class LoginFormComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit() {
-    localStorage.setItem("isBackVisible","visible");
+    localStorage.setItem("isBackVisible", "visible");
   }
 
   public tryLogin(user: string, pass: string) {
@@ -39,7 +39,7 @@ export class LoginFormComponent implements OnInit {
 
   navigateToHome() {
     if (localStorage.getItem("authKey") != "") {
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/dashboard");
     }
   }
 }

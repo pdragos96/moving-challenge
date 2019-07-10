@@ -1,0 +1,26 @@
+<div class="statsPageLevelContainerDiv">
+  <div class="statsPageLevelInsideDiv">
+    <div class="statsPageLevelDetailsDiv">
+      <span>{{ level.levelName }}</span>
+    </div>
+    <div class="statsPageLevelProgressDiv">
+      <span style="font-weight: 700">{{
+        level.participantsWithTargetPoints + "/"
+      }}</span
+      ><span style="color:#FA709B;">{{ level.targetParticipants + " " }} </span
+      >Participants
+    </div>
+    <div class="statsPageLevelPointsDiv">
+      <span style="color:#FA709B; ">{{ level.targetPoints }} </span>Points
+    </div>
+  </div>
+  <div class="statsPageLevelProgressBarDiv" style="height: 2rem;">
+    <div
+      class="aqua-color sc-bwzfXH clNKnY"
+      [ngStyle]="{ width: getPercentage() }"
+    ></div>
+  </div>
+  <div class="statsPageLevelPercentageDiv">
+    {{ level.completedPercentage + "% Complete" }}
+  </div>
+</div>

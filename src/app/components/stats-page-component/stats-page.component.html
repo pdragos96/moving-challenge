@@ -1,0 +1,52 @@
+<div class="statsPageContainerDiv">
+  <div class="statsPageDetailsDiv">
+    <a [routerLink]="['/dashboard']">
+      <div class="statsPageCardDiv">
+        <img src="assets/fortec_moving.jpg" class="statsPageCardImg" />
+        <div class="statsPageCardDetailsDiv">
+          <div class="statsPageCardTitleDiv">Moving Challenge</div>
+          <div class="statsPageCardDateDiv">
+            <span>15/05/19</span><span>15/11/19</span>
+          </div>
+          <div class="statsPageCardProgressDiv">
+            <div
+              class="statsPageCardProgressInsideDiv"
+              [ngStyle]="{ width: getDaysGonePercentage() }"
+            ></div>
+          </div>
+        </div>
+        <div class="statsPageCardTimePassedDiv">
+          <div class="statsPageCardTimeInsideDiv">
+            <p>
+              <span style="padding-right: 4px; font-weight:600;">{{
+                getDaysGone()
+              }}</span
+              >Days gone
+            </p>
+            <p>
+              <span style="padding-right: 4px; font-weight:600;">{{
+                getDaysLeft()
+              }}</span
+              >Days left
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <div class="statsPageLevelsContainerDiv">
+      <app-stats-page-levels
+        *ngFor="let level of getLevels()"
+        class="statsPageLevel"
+        [level]="level"
+      ></app-stats-page-levels>
+    </div>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    class="navigateButton"
+    [routerLink]="['/dashboard']"
+  >
+    Press Here or on the Moving Challenge Card to go to the Dashboard!
+  </button>
+</div>

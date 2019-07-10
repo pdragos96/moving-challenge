@@ -1,0 +1,182 @@
+.statsPageContainerDiv {
+  margin-top: 90px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.statsPageDetailsDiv {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 70px;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:any-link {
+  cursor: pointer;
+}
+
+.statsPageCardDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.statsPageCardImg {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.statsPageCardDetailsDiv {
+  padding: 1.25rem;
+}
+
+.statsPageCardTitleDiv {
+  font-family: "somatic";
+  font-size: 2.6vmax;
+  height: 8vmax;
+  font-weight: 900;
+  //   -webkit-text-fill-color: transparent;
+  box-sizing: border-box;
+  //   background: linear-gradient(to right, #07afe9, #2af19c);
+}
+
+.statsPageCardDateDiv {
+  //   font-family: "Open Sans L";
+  font-size: 0.8vmax;
+  color: black;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.statsPageCardProgressDiv {
+  height: 2rem;
+  margin-top: 0.5rem !important;
+  display: flex;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 1rem;
+}
+
+.statsPageCardProgressInsideDiv {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transition: width 0.6s ease;
+  border-radius: 1em;
+  background: linear-gradient(to right, #07afe9, #2af19c);
+  width: 100%;
+  height: 2rem;
+}
+
+.statsPageCardTimePassedDiv {
+  display: flex;
+  align-items: flex-end;
+}
+
+.statsPageCardTimeInsideDiv {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 1.25rem;
+  border-top: 2px solid #e9ecef;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-left: 1rem;
+  color: #afafaf;
+}
+
+.statsPageLevelsContainerDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.statsPageLevelContainerDiv {
+  align-self: center;
+}
+
+.statsPageLevelInsideDiv {
+  display: flex;
+}
+
+.statsPageLevelDetailsDiv {
+  font-family: "somatic";
+  font-size: 1.5rem;
+}
+
+.statsPageLevelProgressDiv {
+  padding: 0.25rem 1rem 0 1rem;
+}
+
+.statsPageLevelPointsDiv {
+  padding-top: 0.25rem;
+}
+
+.statsPageLevelProgressBarDiv {
+  height: 2rem;
+  margin-top: 0.5rem !important;
+  display: flex;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 1rem;
+}
+
+.clNKnY {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transition: width 0.6s ease;
+  border-radius: 1em;
+  background: linear-gradient(to right, #07afe9, #2af19c);
+  width: 100%;
+  height: 2rem;
+}
+
+.statsPageLevelPercentageDiv {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.navigateButton {
+  width: 80%;
+  height: 75px;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
