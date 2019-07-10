@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
   title = "moving-challenge";
 
   ngOnInit() {
-    localStorage.setItem("authKey", "");
-    localStorage.setItem("currentUser", "");
+    // localStorage.setItem("authKey", "");
+    // localStorage.setItem("currentUser", "");
     localStorage.setItem("isBackVisible", "hidden");
   }
 
