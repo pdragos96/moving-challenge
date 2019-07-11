@@ -52,4 +52,42 @@ export class TracksPageService {
   public getNameById(id: number): string {
     return this.navService.getNameById(id);
   }
+
+
+  public sortByStartedAscending(): void {
+    this.tracksArray.sort(function(a,b) {
+      if (a.startedAt < b.startedAt) {return 1;}
+      if (a.startedAt > b.startedAt) {return -1;}
+      return 0;
+    });
+  }
+  public sortByStartedDescending(): void {
+    this.tracksArray.sort(function(a,b) {
+      if (a.startedAt < b.startedAt) {return -1;}
+      if (a.startedAt > b.startedAt) {return 1;}
+      return 0;
+    });
+  }
+
+  public sortByUnitsAscending(): void {
+    this.tracksArray.sort(function(a,b) {
+      return a.units - b.units;
+    });
+  }
+  public sortByUnitsDescending(): void {
+    this.tracksArray.sort(function(a,b) {
+      return b.units - a.units;
+    });
+  }
+
+  public sortByElapsedAscending(): void {
+    this.tracksArray.sort(function(a,b) {
+     return a.elapsedTime - b.elapsedTime;
+    });
+  }
+  public sortByElapsedDescending(): void {
+    this.tracksArray.sort(function(a,b) {
+      return b.elapsedTime - a.elapsedTime;
+    });
+  }
 }

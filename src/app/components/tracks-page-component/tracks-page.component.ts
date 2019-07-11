@@ -11,6 +11,13 @@ import { TrackInfo } from "src/app/models/trackInfo";
 export class TracksPageComponent implements OnInit {
   id: number;
 
+  colorOne: string = "rgb(243, 128, 200)";
+  colorTwo: string = "rgb(49, 176, 227)";
+  colorThree: string = "rgb(49, 176, 227)";
+  colorFour: string = "rgb(49, 176, 227)";
+  colorFive: string = "rgb(49, 176, 227)";
+  colorSix: string = "rgb(49, 176, 227)";
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private tracksService: TracksPageService
@@ -37,5 +44,74 @@ export class TracksPageComponent implements OnInit {
 
   public getNameById(): string {
     return this.tracksService.getNameById(this.id);
+  }
+
+  public sortByStartedAscending(): void {
+    this.makeAllBlue();
+    this.colorOne = "rgb(243, 128, 200)";
+    this.tracksService.sortByStartedAscending();
+  }
+
+  public sortByStartedDescending(): void {
+    this.makeAllBlue();
+    this.colorTwo = "rgb(243, 128, 200)";
+    this.tracksService.sortByStartedDescending();
+  }
+
+  public sortByUnitsAscending(): void {
+    this.makeAllBlue();
+    this.colorThree = "rgb(243, 128, 200)";
+    this.tracksService.sortByUnitsAscending();
+  }
+
+  public sortByUnitsDescending(): void {
+    this.makeAllBlue();
+    this.colorFour = "rgb(243, 128, 200)";
+    this.tracksService.sortByUnitsDescending();
+  }
+
+  public sortByElapsedAscending(): void {
+    this.makeAllBlue();
+    this.colorFive = "rgb(243, 128, 200)";
+    this.tracksService.sortByElapsedAscending();
+  }
+
+  public sortByElapsedDescending(): void {
+    this.makeAllBlue();
+    this.colorSix = "rgb(243, 128, 200)";
+    this.tracksService.sortByElapsedDescending();
+  }
+
+  public getColorOne(): string {
+    return this.colorOne;
+  }
+  
+  public getColorTwo(): string {
+    return this.colorTwo;
+  }
+  
+  public getColorThree(): string {
+    return this.colorThree;
+  }
+  
+  public getColorFour(): string {
+    return this.colorFour;
+  }
+  
+  public getColorFive(): string {
+    return this.colorFive;
+  }
+  
+  public getColorSix(): string {
+    return this.colorSix;
+  }
+
+  public makeAllBlue(): void {
+  this.colorOne = "rgb(49, 176, 227)";
+  this.colorTwo = "rgb(49, 176, 227)";
+  this.colorThree = "rgb(49, 176, 227)";
+  this.colorFour = "rgb(49, 176, 227)";
+  this.colorFive = "rgb(49, 176, 227)";
+  this.colorSix = "rgb(49, 176, 227)";
   }
 }

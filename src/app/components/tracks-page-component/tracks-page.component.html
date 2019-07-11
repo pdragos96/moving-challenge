@@ -12,12 +12,81 @@
       <div class="tracksContentDescriptionOneDiv"></div>
       <div class="tracksContentDescriptionTwoDiv">
         <span>Started</span>
+        <div class="startedSortDiv">
+          <svg
+            class="svgButton"
+            (click)="sortByStartedAscending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#f380c8"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorOne() }"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+          </svg>
+          <svg
+            class="svgButton"
+            (click)="sortByStartedDescending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#31b0e3"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorTwo() }"
+          >
+            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path>
+          </svg>
+        </div>
       </div>
       <div class="tracksContentDescriptionThreeDiv">
         <span>Name</span>
       </div>
       <div class="tracksContentDescriptionFourDiv">
         <span>Units(km)</span>
+
+        <div class="unitsSortDiv">
+          <svg
+            class="svgButton"
+            (click)="sortByUnitsAscending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#31b0e3"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorThree() }"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+          </svg>
+          <svg
+            class="svgButton"
+            (click)="sortByUnitsDescending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#31b0e3"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorFour() }"
+          >
+            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path>
+          </svg>
+        </div>
       </div>
       <div class="tracksContentDescriptionFiveDiv">
         <span>Average speed</span>
@@ -27,12 +96,48 @@
       </div>
       <div class="tracksContentDescriptionSevenDiv">
         <span>Elapsed time</span>
+
+        <div class="elapsedSortDiv">
+          <svg
+            class="svgButton"
+            (click)="sortByElapsedAscending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#31b0e3"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorFive() }"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+          </svg>
+          <svg
+            class="svgButton"
+            (click)="sortByElapsedDescending()"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            size="18"
+            color="#31b0e3"
+            height="18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+            [ngStyle]="{ color: getColorSix() }"
+          >
+            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path>
+          </svg>
+        </div>
       </div>
     </div>
     <app-track-details
       *ngFor="let track of getTracksList()"
       class="theTrackComponent"
       [track]="track"
-    ></app-track-details>
+    >
+    </app-track-details>
   </div>
 </div>
