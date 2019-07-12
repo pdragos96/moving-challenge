@@ -26,6 +26,7 @@ import { LoginFormComponent } from './components/login-form-component/login-form
 import { MainScreenComponent } from './components/main-screen/main-screen.component';
 import { StatsPageComponent } from './components/stats-page-component/stats-page.component';
 import { StatsPageLevelsComponent } from './components/stats-page-levels-component/stats-page-levels.component';
+import { LoadingScreenComponent } from './components/loading-screen-component/loading-screen.component';
 
 const appRoutes: Routes = [
   { path: "tracks/:userId", component: TracksPageComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     MainScreenComponent,
     StatsPageComponent,
-    StatsPageLevelsComponent
+    StatsPageLevelsComponent,
+    LoadingScreenComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

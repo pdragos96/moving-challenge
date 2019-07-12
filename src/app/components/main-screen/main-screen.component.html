@@ -1,6 +1,7 @@
 <div class="mainScreenContentDiv">
   <app-sidebar class="appSideBar"></app-sidebar>
-  <div class="mainScreenCardsDiv">
+  <app-loading-screen *ngIf="getIsLoaded() == false"> </app-loading-screen>
+  <div *ngIf="getIsLoaded() == true" class="mainScreenCardsDiv">
     <app-details-page class="appDetailsPage"></app-details-page>
   </div>
 </div>
