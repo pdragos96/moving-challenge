@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService } from 'src/app/services/nav-service/nav.service';
 
 @Component({
   selector: 'app-main-screen',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navService: NavService) { }
 
   ngOnInit() {
+  }
+
+  public getIsLoaded(): boolean {
+    if (this.navService.getDisplayedListSize() > 0) return true;
+    return false;
   }
 
 }

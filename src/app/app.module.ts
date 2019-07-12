@@ -26,6 +26,7 @@ import { LoginFormComponent } from './components/login-form-component/login-form
 import { MainScreenComponent } from './components/main-screen/main-screen.component';
 import { StatsPageComponent } from './components/stats-page-component/stats-page.component';
 import { StatsPageLevelsComponent } from './components/stats-page-levels-component/stats-page-levels.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 const appRoutes: Routes = [
   { path: "tracks/:userId", component: TracksPageComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     MainScreenComponent,
     StatsPageComponent,
-    StatsPageLevelsComponent
+    StatsPageLevelsComponent,
+    ProgressBarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
