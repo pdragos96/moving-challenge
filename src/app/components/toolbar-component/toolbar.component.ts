@@ -61,4 +61,34 @@ export class ToolbarComponent implements OnInit {
   public getBackVisibility(): string {
     return localStorage.getItem("isBackVisible");
   }
+
+  sortByCombined(): void {
+    this.navService.sortByCombined();
+  }
+
+  sortByRiding(): void {
+    this.navService.sortByRiding();
+  }
+
+  sortByRunning(): void {
+    this.navService.sortByRunning();
+  }
+
+  sortBySwimming(): void {
+    this.navService.sortBySwimming();
+  }
+
+  sortByWalking(): void {
+    this.navService.sortByWalking();
+  }
+
+  getIsSearchEmpty(): boolean {
+    if (this.navService.areAllVoid() == false) {
+      this.sortByCombined();
+    }
+    if (this.navService.getDisplayedListSize() == 0) {
+      return false;
+    }
+    return this.navService.areAllVoid();
+  }
 }

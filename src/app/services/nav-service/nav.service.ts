@@ -299,4 +299,70 @@ export class NavService {
     }
     return "";
   }
+
+  public sortByCombined(): void {
+    this.displayedList.sort(function(a, b) {
+      return a.rank - b.rank;
+    });
+  }
+
+  public sortByRiding(): void {
+    this.displayedList.sort(function(a, b) {
+      if (
+        a.leaderboardPieChartData[0].points ==
+        b.leaderboardPieChartData[0].points
+      ) {
+        return a.rank - b.rank;
+      }
+      return (
+        b.leaderboardPieChartData[0].points -
+        a.leaderboardPieChartData[0].points
+      );
+    });
+  }
+
+  public sortByRunning(): void {
+    this.displayedList.sort(function(a, b) {
+      if (
+        a.leaderboardPieChartData[1].points ==
+        b.leaderboardPieChartData[1].points
+      ) {
+        return a.rank - b.rank;
+      }
+      return (
+        b.leaderboardPieChartData[1].points -
+        a.leaderboardPieChartData[1].points
+      );
+    });
+  }
+
+  public sortBySwimming(): void {
+    this.displayedList.sort(function(a, b) {
+      if (
+        a.leaderboardPieChartData[2].points ==
+        b.leaderboardPieChartData[2].points
+      ) {
+        return a.rank - b.rank;
+      }
+      return (
+        b.leaderboardPieChartData[2].points -
+        a.leaderboardPieChartData[2].points
+      );
+    });
+  }
+
+  public sortByWalking(): void {
+    this.displayedList.sort(function(a, b) {
+      if (
+        a.leaderboardPieChartData[3].points ==
+        b.leaderboardPieChartData[3].points
+      ) {
+        return a.rank - b.rank;
+      }
+      return (
+        b.leaderboardPieChartData[3].points -
+        a.leaderboardPieChartData[3].points
+      );
+    });
+  }
 }

@@ -22,17 +22,18 @@ import { BottomNavigationComponent } from "./components/bottom-navigation-compon
 import { CardComponentComponent } from "./components/card-component/card-component.component";
 import { TracksPageComponent } from "./components/tracks-page-component/tracks-page.component";
 import { TrackDetailsComponent } from "./components/track-details-component/track-details.component";
-import { LoginFormComponent } from './components/login-form-component/login-form.component';
-import { MainScreenComponent } from './components/main-screen/main-screen.component';
-import { StatsPageComponent } from './components/stats-page-component/stats-page.component';
-import { StatsPageLevelsComponent } from './components/stats-page-levels-component/stats-page-levels.component';
-import { LoadingScreenComponent } from './components/loading-screen-component/loading-screen.component';
+import { LoginFormComponent } from "./components/login-form-component/login-form.component";
+import { MainScreenComponent } from "./components/main-screen/main-screen.component";
+import { StatsPageComponent } from "./components/stats-page-component/stats-page.component";
+import { StatsPageLevelsComponent } from "./components/stats-page-levels-component/stats-page-levels.component";
+import { LoadingScreenComponent } from "./components/loading-screen-component/loading-screen.component";
+import { MatMenuModule } from "@angular/material/menu";
 
 const appRoutes: Routes = [
   { path: "tracks/:userId", component: TracksPageComponent },
-  { path: "login", component: LoginFormComponent},
+  { path: "login", component: LoginFormComponent },
   { path: "dashboard", component: MainScreenComponent },
-  { path: "", component: StatsPageComponent}
+  { path: "", component: StatsPageComponent }
 ];
 
 @NgModule({
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

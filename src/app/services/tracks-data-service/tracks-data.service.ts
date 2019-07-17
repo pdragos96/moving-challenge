@@ -1,11 +1,14 @@
+// tslint:disable-next-line: quotemark
 import { Injectable } from "@angular/core";
 
 @Injectable({
+  // tslint:disable-next-line: quotemark
   providedIn: "root"
 })
 export class TracksDataService {
-  userId: number = 0;
-  userAvatar: string = "";
+  userId = 0;
+  // tslint:disable-next-line: quotemark
+  userAvatar = "";
 
   constructor() {}
 

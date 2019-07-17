@@ -12,6 +12,35 @@
       keyboard_backspace
     </mat-icon>
   </div>
+
+  <div *ngIf="getIsSearchEmpty() == true" class="sortByDiv">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <span>Sort List By</span>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="sortByCombined()">
+        <span>Combined Points</span>
+      </button>
+      <button mat-menu-item (click)="sortByRiding()">
+        <span>Riding Points</span>
+      </button>
+      <button mat-menu-item (click)="sortByRunning()">
+        <span>Running Points</span>
+      </button>
+      <button mat-menu-item (click)="sortBySwimming()">
+        <span>Swimming Points</span>
+      </button>
+      <button mat-menu-item (click)="sortByWalking()">
+        <span>Walking Points</span>
+      </button>
+    </mat-menu>
+  </div>
+
   <div class="titleDiv">
     <img
       class="imgFortech"
@@ -21,6 +50,7 @@
     />
     <label class="labelToolbar">Fortech's Moving Challenge</label>
   </div>
+
   <div class="loginDiv" (click)="pushedLogButton()">
     <!-- <a class="imgContainer"> -->
     <img
