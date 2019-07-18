@@ -40,8 +40,8 @@ export class NavService {
     return this.filteredArray.length;
   }
 
-  async get_data() {
-    const res = await this.httpClient.get<UserResponse>(this.baseUrl);
+   get_data() {
+    const res = this.httpClient.get<UserResponse>(this.baseUrl);
     res.subscribe(data => {
       console.log(data.totalElements);
       this.numberOfElements = data.totalElements;
@@ -92,8 +92,8 @@ export class NavService {
     }
   }
 
-  async getContestants() {
-    const contestants = await this.httpClient.get<UserResponse>(
+  getContestants() {
+    const contestants = this.httpClient.get<UserResponse>(
       this.contestantsUrlBegining +
         this.numberOfElements +
         this.contestantsUrlEnd
@@ -104,6 +104,7 @@ export class NavService {
         el.color = "transparent";
       }
       this.displayedList = this.competersArray.slice();
+      this.reconstructNum();
     });
   }
 

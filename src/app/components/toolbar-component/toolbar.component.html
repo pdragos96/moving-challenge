@@ -24,7 +24,6 @@
   </div>
 
   <div style="margin-right: 1%;" class="loginDiv" (click)="pushedLogButton()">
-    <!-- <a class="imgContainer"> -->
     <img
       *ngIf="getIsLogged() === 'true'"
       src="data:image/png;base64,{{ getAvatarByUsername() }}"
@@ -35,7 +34,6 @@
       src="{{ getAvatarByUsername() }}"
       class="imgLogin"
     />
-    <!-- </a> -->
     <a class="loginButton">{{ getLoggedStatus() }}</a>
   </div>
 
@@ -52,6 +50,7 @@
       <span>Sort List By</span>
       <mat-icon>more_vert</mat-icon>
     </button>
+
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="sortByCombined()">
         <span>Combined Points</span>
